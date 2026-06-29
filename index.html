@@ -692,21 +692,29 @@
       <h2 class="section-title">Archive</h2>
       <p class="section-sub">A collection of references, inspirations, and past works.</p>
     </div>
-    <a href="#" class="section-arrow">→</a>
+    <div style="display:flex;gap:8px;">
+      <button onclick="slideArchive(-1)" style="background:none;border:1px solid #ddd;border-radius:50%;width:36px;height:36px;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;">←</button>
+      <button onclick="slideArchive(1)" style="background:none;border:1px solid #ddd;border-radius:50%;width:36px;height:36px;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;">→</button>
+    </div>
   </div>
 
-  <div class="archive-grid">
-    <div class="archive-item" style="cursor:pointer;background:#ffffff;padding:12px;"><img src="research.png" style="width:100%;height:100%;object-fit:contain;"/></div>
-    <div class="archive-item" style="cursor:pointer;background:#ffffff;padding:16px;"><img src="illust.png" style="width:100%;height:100%;object-fit:contain;"/></div>
-    <div class="archive-item" style="cursor:pointer;background:#ffffff;padding:12px;"><img src="publication.png" style="width:100%;height:100%;object-fit:contain;"/></div>
-    <div class="archive-item" style="cursor:pointer;background:#ffffff;padding:16px;"><img src="video.png" style="width:100%;height:100%;object-fit:contain;"/></div>
-    <div class="archive-item" style="cursor:pointer;background:#ffffff;padding:16px;"><img src="illust.png" style="width:100%;height:100%;object-fit:contain;"/></div>
-    <div class="archive-item" style="cursor:pointer;background:#ffffff;padding:12px;"><img src="video.png" style="width:100%;height:100%;object-fit:contain;"/></div>
-    <div class="archive-item" style="cursor:pointer;background:#ffffff;padding:16px;"><img src="research.png" style="width:100%;height:100%;object-fit:contain;"/></div>
-    <div class="archive-item" style="cursor:pointer;background:#ffffff;padding:12px;"><img src="publication.png" style="width:100%;height:100%;object-fit:contain;"/></div>
+  <div style="overflow:hidden;">
+    <div id="archiveSlider" style="display:grid;grid-template-columns:repeat(12,calc(25% - 12px));gap:16px;transition:transform 0.4s ease;">
+      <div class="archive-item" style="cursor:pointer;background:#ffffff;padding:12px;"><img src="research.png" style="width:100%;height:100%;object-fit:contain;"/></div>
+      <div class="archive-item" style="cursor:pointer;background:#ffffff;padding:16px;"><img src="illust.png" style="width:100%;height:100%;object-fit:contain;"/></div>
+      <div class="archive-item" style="cursor:pointer;background:#ffffff;padding:12px;"><img src="publication.png" style="width:100%;height:100%;object-fit:contain;"/></div>
+      <div class="archive-item" style="cursor:pointer;background:#ffffff;padding:16px;"><img src="video.png" style="width:100%;height:100%;object-fit:contain;"/></div>
+      <div class="archive-item" style="cursor:pointer;background:#ffffff;padding:16px;"><img src="illust.png" style="width:100%;height:100%;object-fit:contain;"/></div>
+      <div class="archive-item" style="cursor:pointer;background:#ffffff;padding:12px;"><img src="video.png" style="width:100%;height:100%;object-fit:contain;"/></div>
+      <div class="archive-item" style="cursor:pointer;background:#ffffff;padding:16px;"><img src="research.png" style="width:100%;height:100%;object-fit:contain;"/></div>
+      <div class="archive-item" style="cursor:pointer;background:#ffffff;padding:12px;"><img src="publication.png" style="width:100%;height:100%;object-fit:contain;"/></div>
+      <div class="archive-item" style="cursor:pointer;background:#ffffff;padding:12px;"><img src="video.png" style="width:100%;height:100%;object-fit:contain;"/></div>
+      <div class="archive-item" style="cursor:pointer;background:#ffffff;padding:16px;"><img src="research.png" style="width:100%;height:100%;object-fit:contain;"/></div>
+      <div class="archive-item" style="cursor:pointer;background:#ffffff;padding:12px;"><img src="illust.png" style="width:100%;height:100%;object-fit:contain;"/></div>
+      <div class="archive-item" style="cursor:pointer;background:#ffffff;padding:16px;"><img src="publication.png" style="width:100%;height:100%;object-fit:contain;"/></div>
+    </div>
   </div>
 
-  <button class="view-more">View more in Archive &nbsp;→</button>
 </section>
 
 <hr class="section-divider">
@@ -840,7 +848,7 @@
     <!-- HERO -->
     <div style="padding:64px 0 0;">
       <p style="font-size:12px;text-transform:uppercase;letter-spacing:0.1em;color:#888;margin-bottom:16px;">Brand Identity · Space Design · 2023</p>
-      <h1 style="font-family:'Playfair Display',Georgia,serif;font-size:clamp(48px,8vw,80px);font-weight:400;letter-spacing:-0.03em;line-height:1.05;margin-bottom:40px;">소운탕</h1>
+      <h1 style="font-family:'Nunito',sans-serif;font-size:clamp(48px,8vw,80px);font-weight:400;letter-spacing:-0.03em;line-height:1.05;margin-bottom:40px;">소운탕</h1>
       <div style="display:flex;gap:48px;padding:28px 0;border-top:1px solid #e0ddd8;border-bottom:1px solid #e0ddd8;margin-bottom:56px;flex-wrap:wrap;">
         <div style="display:flex;flex-direction:column;gap:4px;"><span style="font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:#888;">Role</span><span style="font-size:14px;font-weight:500;">Brand Designer</span></div>
         <div style="display:flex;flex-direction:column;gap:4px;"><span style="font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:#888;">Year</span><span style="font-size:14px;font-weight:500;">2023</span></div>
@@ -884,17 +892,17 @@
       <p style="font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:#888;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid #e0ddd8;">Naming</p>
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
         <div style="background:#fff;border-radius:12px;padding:28px 24px;border:1px solid #e0ddd8;">
-          <div style="font-family:'Playfair Display',serif;font-size:36px;color:#DB0F0F;margin-bottom:6px;">素</div>
+          <div style="font-family:'Nunito',sans-serif;font-size:36px;color:#DB0F0F;margin-bottom:6px;">素</div>
           <div style="font-size:12px;color:#888;margin-bottom:12px;">바탕 소</div>
           <div style="font-size:13px;line-height:1.7;color:#444;">꾸밈을 덜어내고 본래의 나로 돌아갑니다.</div>
         </div>
         <div style="background:#fff;border-radius:12px;padding:28px 24px;border:1px solid #e0ddd8;">
-          <div style="font-family:'Playfair Display',serif;font-size:36px;color:#DB0F0F;margin-bottom:6px;">雲</div>
+          <div style="font-family:'Nunito',sans-serif;font-size:36px;color:#DB0F0F;margin-bottom:6px;">雲</div>
           <div style="font-size:12px;color:#888;margin-bottom:12px;">구름 운</div>
           <div style="font-size:13px;line-height:1.7;color:#444;">생각은 흘려보내고 감각에 조용히 머무릅니다.</div>
         </div>
         <div style="background:#fff;border-radius:12px;padding:28px 24px;border:1px solid #e0ddd8;">
-          <div style="font-family:'Playfair Display',serif;font-size:36px;color:#DB0F0F;margin-bottom:6px;">湯</div>
+          <div style="font-family:'Nunito',sans-serif;font-size:36px;color:#DB0F0F;margin-bottom:6px;">湯</div>
           <div style="font-size:12px;color:#888;margin-bottom:12px;">끓을 탕</div>
           <div style="font-size:13px;line-height:1.7;color:#444;">온기 속에서 나의 상태를 다시 느낍니다.</div>
         </div>
@@ -906,17 +914,17 @@
       <p style="font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:#888;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid #e0ddd8;">Brand Core Value</p>
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
         <div style="background:#fff;border:1px solid #e0ddd8;border-radius:12px;padding:28px 24px;text-align:center;">
-          <div style="font-family:'Playfair Display',serif;font-size:22px;margin-bottom:4px;">본질</div>
+          <div style="font-family:'Nunito',sans-serif;font-size:22px;margin-bottom:4px;">본질</div>
           <div style="font-size:12px;color:#888;margin-bottom:14px;text-transform:uppercase;letter-spacing:0.06em;">Simplicity</div>
           <div style="font-size:13px;line-height:1.7;color:#555;">고요하고 편안한 공간속에서 불필요한 요소를 덜어내고, 목욕과 휴식의 본질에 집중합니다.</div>
         </div>
         <div style="background:#fff;border:1px solid #e0ddd8;border-radius:12px;padding:28px 24px;text-align:center;">
-          <div style="font-family:'Playfair Display',serif;font-size:22px;margin-bottom:4px;">자연</div>
+          <div style="font-family:'Nunito',sans-serif;font-size:22px;margin-bottom:4px;">자연</div>
           <div style="font-size:12px;color:#888;margin-bottom:14px;text-transform:uppercase;letter-spacing:0.06em;">Nature</div>
           <div style="font-size:13px;line-height:1.7;color:#555;">소운탕 속의 자연을 보고 느끼며 긴장 되어있던 마음을 천천히 이완합니다.</div>
         </div>
         <div style="background:#fff;border:1px solid #e0ddd8;border-radius:12px;padding:28px 24px;text-align:center;">
-          <div style="font-family:'Playfair Display',serif;font-size:22px;margin-bottom:4px;">고요</div>
+          <div style="font-family:'Nunito',sans-serif;font-size:22px;margin-bottom:4px;">고요</div>
           <div style="font-size:12px;color:#888;margin-bottom:14px;text-transform:uppercase;letter-spacing:0.06em;">Calm</div>
           <div style="font-size:13px;line-height:1.7;color:#555;">도시속의 불필요한 소음에서 벗어나 고요한 시간을 가집니다.</div>
         </div>
@@ -1089,7 +1097,7 @@
     <!-- HERO -->
     <div style="padding:64px 0 0;">
       <p style="font-size:12px;text-transform:uppercase;letter-spacing:0.1em;color:#666;margin-bottom:16px;">Brand Identity · Product Design · 2026</p>
-      <h1 style="font-family:'Playfair Display',Georgia,serif;font-size:clamp(48px,8vw,80px);font-weight:400;letter-spacing:-0.03em;line-height:1.05;margin-bottom:16px;">OHi</h1>
+      <h1 style="font-family:'Nunito',sans-serif;font-size:clamp(48px,8vw,80px);font-weight:400;letter-spacing:-0.03em;line-height:1.05;margin-bottom:16px;">OHi</h1>
       <p style="font-size:18px;color:#aaa;margin-bottom:40px;font-style:italic;">Blooming even in the darkest moments.</p>
       <div style="display:flex;gap:48px;padding:28px 0;border-top:1px solid #222;border-bottom:1px solid #222;margin-bottom:56px;flex-wrap:wrap;">
         <div style="display:flex;flex-direction:column;gap:4px;"><span style="font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:#666;">Role</span><span style="font-size:14px;font-weight:500;">Brand Designer</span></div>
@@ -1143,7 +1151,7 @@
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
         <div style="background:#111;border-radius:12px;padding:32px;border:1px solid #222;">
           <p style="font-size:12px;text-transform:uppercase;letter-spacing:0.08em;color:#555;margin-bottom:16px;">Problem</p>
-          <h3 style="font-family:'Playfair Display',serif;font-size:22px;font-weight:400;margin-bottom:16px;line-height:1.3;">비오는 밤,<br>우리는 쉽게 보이지 않는다.</h3>
+          <h3 style="font-family:'Nunito',sans-serif;font-size:22px;font-weight:400;margin-bottom:16px;line-height:1.3;">비오는 밤,<br>우리는 쉽게 보이지 않는다.</h3>
           <div style="display:flex;gap:24px;margin-top:24px;">
             <div style="text-align:center;"><div style="font-size:28px;font-weight:700;color:#F2B844;">63%</div><div style="font-size:11px;color:#666;margin-top:4px;">보행자 사망사고<br>야간비율</div></div>
             <div style="text-align:center;"><div style="font-size:28px;font-weight:700;color:#F2B844;">1.4배</div><div style="font-size:11px;color:#666;margin-top:4px;">우천시<br>사고발생 비율</div></div>
@@ -1152,7 +1160,7 @@
         </div>
         <div style="background:#111;border-radius:12px;padding:32px;border:1px solid #222;">
           <p style="font-size:12px;text-transform:uppercase;letter-spacing:0.08em;color:#555;margin-bottom:16px;">Solution</p>
-          <h3 style="font-family:'Playfair Display',serif;font-size:22px;font-weight:400;margin-bottom:16px;line-height:1.3;">OHi Halo Line<br>보이지 않던 존재를,<br>안전하게 드러내는 우산.</h3>
+          <h3 style="font-family:'Nunito',sans-serif;font-size:22px;font-weight:400;margin-bottom:16px;line-height:1.3;">OHi Halo Line<br>보이지 않던 존재를,<br>안전하게 드러내는 우산.</h3>
           <div style="display:flex;gap:16px;margin-top:24px;">
             <div style="background:#1a1a1a;border-radius:8px;padding:12px 16px;text-align:center;flex:1;"><div style="font-size:11px;color:#F2B844;font-weight:600;">Protection</div><div style="font-size:11px;color:#666;margin-top:4px;">안전성</div></div>
             <div style="background:#1a1a1a;border-radius:8px;padding:12px 16px;text-align:center;flex:1;"><div style="font-size:11px;color:#F2B844;font-weight:600;">Visibility</div><div style="font-size:11px;color:#666;margin-top:4px;">시인성</div></div>
@@ -1251,7 +1259,7 @@
     <!-- HERO -->
     <div style="padding:64px 0 0;">
       <p style="font-size:12px;text-transform:uppercase;letter-spacing:0.1em;color:#888;margin-bottom:16px;">BX Design · 2025</p>
-      <h1 style="font-family:'Playfair Display',Georgia,serif;font-size:clamp(48px,8vw,80px);font-weight:400;letter-spacing:-0.03em;line-height:1.05;margin-bottom:40px;">Willog</h1>
+      <h1 style="font-family:'Nunito',sans-serif;font-size:clamp(48px,8vw,80px);font-weight:400;letter-spacing:-0.03em;line-height:1.05;margin-bottom:40px;">Willog</h1>
       <div style="display:flex;gap:48px;padding:28px 0;border-top:1px solid #e0ddd8;border-bottom:1px solid #e0ddd8;margin-bottom:56px;flex-wrap:wrap;">
         <div style="display:flex;flex-direction:column;gap:4px;"><span style="font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:#888;">Role</span><span style="font-size:14px;font-weight:500;">Brand / BX Designer</span></div>
         <div style="display:flex;flex-direction:column;gap:4px;"><span style="font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:#888;">Year</span><span style="font-size:14px;font-weight:500;">2025.06 — 07</span></div>
@@ -1381,7 +1389,7 @@
   </div>
   <div style="padding:16px 40px 60px;">
     <p id="archiveTag" style="font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:#888;margin-bottom:10px;"></p>
-    <h3 id="archiveTitle" style="font-family:'Playfair Display',Georgia,serif;font-size:28px;font-weight:400;margin-bottom:28px;letter-spacing:-0.02em;"></h3>
+    <h3 id="archiveTitle" style="font-family:'Nunito',sans-serif;font-size:28px;font-weight:400;margin-bottom:28px;letter-spacing:-0.02em;"></h3>
     <div id="archiveBody"></div>
   </div>
 </div>
@@ -1421,6 +1429,16 @@
 </div>
 
 <script>
+  let archiveIndex = 0;
+  function slideArchive(dir) {
+    const slider = document.getElementById('archiveSlider');
+    const total = slider.children.length;
+    const max = total - 4;
+    archiveIndex = Math.max(0, Math.min(archiveIndex + dir, max));
+    const itemWidth = slider.children[0].getBoundingClientRect().width + 16;
+    slider.style.transform = `translateX(-${archiveIndex * itemWidth}px)`;
+  }
+
   function goHome() {
     closeOhi(); closeWillog(); closeSountang();
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -1517,7 +1535,7 @@
       title: 'Tomvagee',
       body: `
         <div style="background:#d4c9a8;border-radius:12px;padding:32px;margin-bottom:20px;text-align:center;">
-          <p style="font-family:'Playfair Display',serif;font-size:36px;color:#5a4a30;letter-spacing:-0.02em;">Tomvagee</p>
+          <p style="font-family:'Nunito',sans-serif;font-size:36px;color:#5a4a30;letter-spacing:-0.02em;">Tomvagee</p>
           <p style="font-size:11px;color:#8a7a60;margin-top:8px;letter-spacing:0.1em;text-transform:uppercase;">Typography Reference</p>
         </div>
         <p style="font-size:13px;line-height:1.8;color:#555;">타이포그래피 레퍼런스 수집. 세리프와 산세리프의 조화로운 조합을 탐구하며 브랜드 폰트 시스템을 구성하는 데 참고했습니다.</p>`
