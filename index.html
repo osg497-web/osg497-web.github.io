@@ -171,7 +171,7 @@
     .work-card-img {
       width: 100%;
       aspect-ratio: 4/3;
-      background: #e8e4dd;
+      background: #F2F0EB;
       border-radius: 12px;
       overflow: hidden;
       display: flex;
@@ -179,22 +179,18 @@
       justify-content: center;
     }
 
-    /* Placeholder images using CSS */
-    .work-card-img.willog {
-      background: #111;
-    }
-    .work-card-img.ohi {
-      background: #f5f0e8;
-    }
+    .work-card-img.willog,
+    .work-card-img.ohi,
     .work-card-img.soun {
-      background: #fafaf8;
-      border: 1px solid var(--border);
+      background: #F2F0EB;
     }
 
-    .work-card-img svg, .work-card-img .placeholder-art {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    .work-card-img img {
+      width: 80%;
+      height: 90%;
+      object-fit: contain;
+      object-position: center bottom;
+      filter: drop-shadow(0 8px 24px rgba(0,0,0,0.13));
     }
 
     .work-card-name {
