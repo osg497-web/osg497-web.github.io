@@ -1,0 +1,1875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Saekyoung — Marketing & Brand Designer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Inter:wght@300;400;500&family=Passero+One&family=Parkinsans:wght@400;500;700&family=Nunito:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #F2F0EB;
+      --ink: #1a1a1a;
+      --ink-light: #888;
+      --accent: #2E7D32;
+      --accent-hover: #1B5E20;
+      --card-bg: #fff;
+      --border: #e0ddd8;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'Nunito', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 15px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      padding: 0 48px;
+      height: 56px;
+    }
+
+    .nav-left { display: flex; gap: 32px; }
+    .nav-center {
+      font-family: 'Passero One', Georgia, serif;
+      font-size: 22px;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      text-align: center;
+      cursor: pointer;
+    }
+    .nav-right { display: flex; gap: 32px; justify-content: flex-end; }
+
+    nav a {
+      text-decoration: none;
+      color: var(--ink);
+      font-size: 14px;
+      font-weight: 400;
+      position: relative;
+      padding-bottom: 2px;
+    }
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 0; height: 1px;
+      background: var(--ink);
+      transition: width 0.2s;
+    }
+    nav a:hover::after { width: 100%; }
+
+    /* ── HERO ── */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 72px 24px 80px;
+      gap: 28px;
+    }
+
+    .hero-illustration {
+      width: 220px;
+      height: 220px;
+    }
+
+    /* SVG Illustration — designer juggling objects */
+    .hero h1 {
+      font-family: 'Parkinsans', var(--serif);
+      font-size: clamp(26px, 4vw, 42px);
+      font-weight: 400;
+      line-height: 1.45;
+      letter-spacing: -0.01em;
+      color: #2A1508;
+    }
+
+    .btn-contact {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 10px 24px;
+      border-radius: 100px;
+      border: none;
+      cursor: pointer;
+      font-family: var(--sans);
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-contact:hover {
+      background: var(--accent-hover);
+      transform: translateY(-1px);
+    }
+
+    /* ── SECTIONS ── */
+    section { padding: 72px 48px; max-width: 1100px; margin: 0 auto; }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 8px;
+    }
+    .section-title {
+      font-family: var(--serif);
+      font-size: 36px;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+    }
+    .section-arrow {
+      font-size: 20px;
+      color: var(--ink);
+      text-decoration: none;
+      opacity: 0.5;
+      transition: opacity 0.2s, transform 0.2s;
+      margin-top: 8px;
+    }
+    .section-arrow:hover { opacity: 1; transform: translateX(4px); }
+    .section-sub {
+      color: var(--ink-light);
+      font-size: 13px;
+      margin-bottom: 40px;
+    }
+
+    /* ── WORK CARDS ── */
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .work-card {
+      text-decoration: none;
+      color: var(--ink);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      transition: transform 0.2s;
+    }
+    .work-card:hover { transform: translateY(-4px); }
+
+    .work-card-img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      background: #e8e4dd;
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Placeholder images using CSS */
+    .work-card-img.willog {
+      background: #111;
+    }
+    .work-card-img.ohi {
+      background: #f5f0e8;
+    }
+    .work-card-img.soun {
+      background: #fafaf8;
+      border: 1px solid var(--border);
+    }
+
+    .work-card-img svg, .work-card-img .placeholder-art {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .work-card-name {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 400;
+    }
+    .work-card-type {
+      font-size: 12px;
+      color: var(--ink-light);
+      margin-top: -8px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    /* ── PROJECT DETAIL PANEL ── */
+    .project-panel {
+      position: fixed;
+      top: 0; right: 0;
+      width: min(600px, 100vw);
+      height: 100vh;
+      background: #fff;
+      z-index: 200;
+      transform: translateX(100%);
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow-y: auto;
+      box-shadow: -8px 0 40px rgba(0,0,0,0.12);
+    }
+    .project-panel.open { transform: translateX(0); }
+
+    .panel-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.3);
+      z-index: 199;
+      backdrop-filter: blur(2px);
+    }
+    .panel-overlay.open { display: block; }
+
+    .panel-close {
+      position: sticky;
+      top: 0;
+      display: flex;
+      justify-content: flex-end;
+      padding: 20px 24px 0;
+      background: #fff;
+      z-index: 1;
+    }
+    .panel-close button {
+      background: var(--bg);
+      border: none;
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      font-size: 18px;
+      cursor: pointer;
+      color: var(--ink);
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s;
+    }
+    .panel-close button:hover { background: var(--border); }
+
+    .panel-content { padding: 16px 40px 60px; }
+
+    .panel-tag {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--ink-light);
+      margin-bottom: 10px;
+    }
+    .panel-title {
+      font-family: var(--serif);
+      font-size: 36px;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      margin-bottom: 32px;
+      line-height: 1.15;
+    }
+    .panel-img {
+      width: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 32px;
+      background: #f0ede8;
+    }
+    .panel-img svg { width: 100%; display: block; }
+
+    .panel-meta {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 32px;
+      padding: 24px;
+      background: var(--bg);
+      border-radius: 12px;
+    }
+    .panel-meta-item { display: flex; flex-direction: column; gap: 4px; }
+    .panel-meta-label { font-size: 11px; color: var(--ink-light); text-transform: uppercase; letter-spacing: 0.06em; }
+    .panel-meta-value { font-size: 14px; font-weight: 500; }
+
+    .panel-section { margin-bottom: 28px; }
+    .panel-section h4 {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--ink-light);
+      margin-bottom: 10px;
+    }
+    .panel-section p { font-size: 14px; line-height: 1.8; color: #444; }
+
+    .panel-imgs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+    .panel-imgs-grid .panel-img { margin-bottom: 0; }
+    .work-card { cursor: pointer; }
+
+    /* ── ARCHIVE GRID ── */
+    .archive-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+
+    .archive-item {
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      color: var(--ink-light);
+      transition: transform 0.2s;
+    }
+    .archive-item:hover { transform: scale(1.03); }
+
+    .archive-item.tall { grid-row: span 2; aspect-ratio: auto; }
+
+    /* Archive placeholder colors */
+    .a1 { background: #c9b99a; }
+    .a2 { background: #e8e4dc; font-size: 10px; padding: 8px; color: #555; line-height: 1.4; }
+    .a3 { background: #8b7355; }
+    .a4 { background: #d4c9a8; padding: 10px; }
+    .a5 { background: #a89070; }
+    .a6 { background: #c4b99a; }
+    .a7 { background: #eae6de; font-size: 10px; padding: 8px; color: var(--ink); }
+    .a8 { background: #d6d0c4; }
+    .a9 { background: #7a6e5a; }
+    .a10 { background: #e0dbd0; }
+    .a11 { background: #c8c0b2; }
+    .a12 { background: #eae8e2; font-size: 10px; padding: 8px; }
+
+    .view-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      color: var(--ink);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      cursor: pointer;
+      transition: opacity 0.2s;
+      border: none;
+      background: none;
+    }
+    .view-more:hover { opacity: 0.6; }
+
+    /* ── ABOUT ── */
+    .about-inner {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .about-photo-wrap {
+      position: relative;
+      width: 220px;
+    }
+
+    .about-photo {
+      width: 200px;
+      height: 240px;
+      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+      background: #c4b49a;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+    }
+
+    /* Doodle decorations */
+    .doodle-star {
+      position: absolute;
+      top: 10px; left: -10px;
+      font-size: 28px;
+      color: #f5c518;
+      transform: rotate(-15deg);
+    }
+    .doodle-ring {
+      position: absolute;
+      bottom: 20px; right: -8px;
+      width: 30px; height: 20px;
+      border: 2.5px solid #555;
+      border-radius: 0 0 40% 40%;
+      transform: rotate(20deg);
+    }
+
+    .about-text h2 {
+      font-family: var(--serif);
+      font-size: 32px;
+      font-weight: 400;
+      margin-bottom: 20px;
+      letter-spacing: -0.02em;
+    }
+    .about-text p {
+      font-size: 14px;
+      color: #444;
+      line-height: 1.8;
+      margin-bottom: 14px;
+      max-width: 460px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 36px;
+      flex-wrap: wrap;
+    }
+
+    .footer-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--ink);
+      font-size: 13px;
+    }
+    .footer-link:hover .footer-link-label { text-decoration: underline; text-underline-offset: 3px; }
+
+    .footer-icon {
+      width: 32px;
+      height: 32px;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--card-bg);
+      flex-shrink: 0;
+    }
+
+    .footer-link-inner { display: flex; flex-direction: column; }
+    .footer-link-sub { font-size: 11px; color: var(--ink-light); }
+    .footer-link-label { font-size: 13px; font-weight: 500; }
+
+    .footer-copy {
+      font-size: 12px;
+      color: var(--ink-light);
+      text-align: right;
+      line-height: 1.5;
+    }
+
+    /* ── DIVIDER ── */
+    .section-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* ── CONTACT MODAL ── */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.45);
+      z-index: 999;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(4px);
+    }
+    .modal-overlay.open { display: flex; }
+
+    .modal {
+      background: #fff;
+      border-radius: 20px;
+      padding: 40px;
+      width: 100%;
+      max-width: 460px;
+      margin: 20px;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.15);
+      position: relative;
+      animation: modalIn 0.25s ease;
+    }
+
+    @keyframes modalIn {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 16px; right: 20px;
+      background: none;
+      border: none;
+      font-size: 22px;
+      cursor: pointer;
+      color: var(--ink-light);
+      line-height: 1;
+      transition: color 0.15s;
+    }
+    .modal-close:hover { color: var(--ink); }
+
+    .modal h3 {
+      font-family: var(--serif);
+      font-size: 24px;
+      font-weight: 400;
+      margin-bottom: 6px;
+    }
+    .modal p {
+      font-size: 13px;
+      color: var(--ink-light);
+      margin-bottom: 28px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+    .form-group label {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--ink);
+    }
+    .form-group input,
+    .form-group textarea {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 14px;
+      font-size: 14px;
+      font-family: var(--sans);
+      background: #fafaf8;
+      color: var(--ink);
+      outline: none;
+      transition: border-color 0.2s;
+      resize: none;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--accent);
+      background: #fff;
+    }
+    .form-group textarea { height: 110px; }
+
+    .btn-submit {
+      width: 100%;
+      background: var(--ink);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      padding: 14px;
+      font-size: 14px;
+      font-weight: 500;
+      font-family: var(--sans);
+      cursor: pointer;
+      margin-top: 8px;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-submit:hover { background: #333; transform: translateY(-1px); }
+
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 20px 0;
+    }
+    .form-success .check { font-size: 40px; margin-bottom: 12px; }
+    .form-success h4 { font-family: var(--serif); font-size: 20px; font-weight: 400; margin-bottom: 8px; }
+    .form-success p { font-size: 13px; color: var(--ink-light); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+      .nav-left, .nav-right { gap: 16px; }
+      section { padding: 48px 20px; }
+      .work-grid { grid-template-columns: 1fr; gap: 20px; }
+      .archive-grid { grid-template-columns: repeat(3, 1fr); }
+      .about-inner { grid-template-columns: 1fr; gap: 32px; }
+      footer { padding: 24px 20px; flex-direction: column; align-items: flex-start; }
+      .footer-copy { text-align: left; }
+    }
+
+    @media (max-width: 480px) {
+      .nav-center { font-size: 16px; }
+      nav a { font-size: 12px; }
+      .archive-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-left">
+    <a href="#work">Work</a>
+    <a href="#archive">Archive</a>
+  </div>
+  <div class="nav-center" onclick="goHome()" style="cursor:pointer;">Saekyoung</div>
+  <div class="nav-right">
+    <a href="#about">About</a>
+    <a href="#" target="_blank">Resume</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <img src="https://i.imgur.com/RaYTOH5.png" class="hero-illustration" alt="Saekyoung illustration" style="width:280px;height:280px;object-fit:contain;"/>
+
+
+  <h1>Hello! I'm Saekyoung,<br>I'm a Marketing & brand designer.</h1>
+  <button onclick="openModal()" class="btn-contact">Contact me!</button>
+</div>
+
+<hr class="section-divider">
+
+<!-- WORK -->
+<section id="work">
+  <div class="section-header">
+    <div>
+      <h2 class="section-title">Work</h2>
+      <p class="section-sub">Selected projects I've worked on.</p>
+    </div>
+    <a href="#" class="section-arrow">→</a>
+  </div>
+
+  <div class="work-grid">
+
+    <!-- Willog -->
+    <div onclick="openWillog()" class="work-card">
+      <div class="work-card-img willog">
+        <img src="willog.png" alt="Willog" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"/>
+      </div>
+      <div>
+        <div class="work-card-name">Willog</div>
+        <div class="work-card-type">BX Design</div>
+      </div>
+    </div>
+
+    <!-- OHi -->
+    <div onclick="openOhi()" class="work-card">
+      <div class="work-card-img ohi">
+        <img src="ohi.png" alt="OHi" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"/>
+      </div>
+      <div>
+        <div class="work-card-name">OHi</div>
+        <div class="work-card-type">Brand Identity</div>
+      </div>
+    </div>
+
+    <!-- 소운탕 카드 클릭하면 전체화면 페이지 열기 -->
+    <div onclick="openSountang()" class="work-card">
+      <div class="work-card-img soun">
+        <img src="soun.png" alt="소운탕" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"/>
+      </div>
+      <div>
+        <div class="work-card-name">소운탕</div>
+        <div class="work-card-type">Editorial Design</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ARCHIVE -->
+<section id="archive">
+  <div class="section-header">
+    <div>
+      <h2 class="section-title">Archive</h2>
+      <p class="section-sub">A collection of references, inspirations, and past works.</p>
+    </div>
+    <a href="#" class="section-arrow">→</a>
+  </div>
+
+  <div class="archive-grid">
+    <div class="archive-item a1 tall" onclick="openArchive('texture')" style="cursor:pointer;"></div>
+    <div class="archive-item a2" onclick="openArchive('gesture')" style="cursor:pointer;">Textural<br>Gesture<br>Research</div>
+    <div class="archive-item a3" onclick="openArchive('moss')" style="cursor:pointer;"></div>
+    <div class="archive-item a4" onclick="openArchive('tomvagee')" style="cursor:pointer;font-size:10px;color:#888;text-align:center;">Tomvagee</div>
+    <div class="archive-item a5" onclick="openArchive('nature')" style="cursor:pointer;"></div>
+    <div class="archive-item a6 tall" onclick="openArchive('folder')" style="cursor:pointer;"></div>
+    <div class="archive-item a7" onclick="openArchive('mossgreen')" style="cursor:pointer;">Moss<br>Green</div>
+    <div class="archive-item a8" onclick="openArchive('seasons')" style="cursor:pointer;font-size:10px;padding:8px;">
+      Seasons<br>
+      <span style="background:#1a1a1a;color:#fff;padding:1px 4px;border-radius:2px;font-size:9px;">PDF</span>
+    </div>
+    <div class="archive-item a9" onclick="openArchive('green')" style="cursor:pointer;"></div>
+    <div class="archive-item a10" onclick="openArchive('illust')" style="cursor:pointer;"></div>
+    <div class="archive-item a11" onclick="openArchive('interview')" style="cursor:pointer;font-size:9px;padding:6px;color:#555;">Interview<br>Aug-19<br><br>RTF</div>
+  </div>
+
+  <button class="view-more">View more in Archive &nbsp;→</button>
+</section>
+
+<hr class="section-divider">
+
+<!-- ABOUT -->
+<section id="about">
+  <h2 class="section-title" style="margin-bottom: 40px;">About</h2>
+  <div class="about-inner">
+    <div class="about-photo-wrap">
+      <span class="doodle-star">★</span>
+      <div class="about-photo">
+        <!-- Silhouette placeholder -->
+        <svg viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
+          <rect width="200" height="240" fill="#c4b49a"/>
+          <!-- Simple person silhouette -->
+          <circle cx="100" cy="72" r="36" fill="#a89070"/>
+          <path d="M40 240 Q40 160 100 155 Q160 160 160 240 Z" fill="#a89070"/>
+        </svg>
+      </div>
+      <div class="doodle-ring"></div>
+    </div>
+
+    <div class="about-text">
+      <h2>Hello! I'm Saekyoung.</h2>
+      <p>I'm a marketing & brand designer based in Seoul. I enjoy turning ideas into clear, thoughtful visuals and building brands that connect with people.</p>
+      <p>With a background in branding, content, and design strategy, I approach each project with curiosity, structure, and a love for details.</p>
+      <p>I'm always excited to work on meaningful projects and collaborate with great people.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER / CONTACT -->
+<footer id="contact">
+  <div class="footer-links">
+
+    <a href="https://instagram.com/saekyoung.archive" target="_blank" class="footer-link">
+      <div class="footer-icon">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17.5" cy="6.5" r="1" fill="#1a1a1a" stroke="none"/>
+        </svg>
+      </div>
+      <div class="footer-link-inner">
+        <span class="footer-link-sub">Instagram</span>
+        <span class="footer-link-label">@saekyoung.archive</span>
+      </div>
+    </a>
+
+    <a href="https://linkedin.com" target="_blank" class="footer-link">
+      <div class="footer-icon">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+          <rect x="2" y="9" width="4" height="12"/>
+          <circle cx="4" cy="4" r="2"/>
+        </svg>
+      </div>
+      <div class="footer-link-inner">
+        <span class="footer-link-sub">LinkedIn</span>
+        <span class="footer-link-label">Saekyoung Kim</span>
+      </div>
+    </a>
+
+    <a href="mailto:saekyoung.design@gmail.com" class="footer-link">
+      <div class="footer-icon">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="4" width="20" height="16" rx="2"/>
+          <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+        </svg>
+      </div>
+      <div class="footer-link-inner">
+        <span class="footer-link-sub">Email</span>
+        <span class="footer-link-label">saekyoung.design@gmail.com</span>
+      </div>
+    </a>
+
+    <a href="#" target="_blank" class="footer-link">
+      <div class="footer-icon">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+          <polyline points="14 2 14 8 20 8"/>
+          <line x1="16" y1="13" x2="8" y2="13"/>
+          <line x1="16" y1="17" x2="8" y2="17"/>
+          <polyline points="10 9 9 9 8 9"/>
+        </svg>
+      </div>
+      <div class="footer-link-inner">
+        <span class="footer-link-sub">Resume</span>
+        <span class="footer-link-label">Download PDF</span>
+      </div>
+    </a>
+
+  </div>
+
+  <div class="footer-copy">
+    © 2025 Saekyoung Archive<br>All rights reserved.
+  </div>
+</footer>
+
+<!-- PROJECT DETAIL PANEL -->
+<div class="panel-overlay" id="panelOverlay" onclick="closePanel()"></div>
+
+<div class="project-panel" id="projectPanel">
+  <div class="panel-close">
+    <button onclick="closePanel()">✕</button>
+  </div>
+  <div class="panel-content" id="panelContent"></div>
+</div>
+
+<!-- 소운탕 FULLSCREEN PAGE -->
+<div id="sountangPage" style="
+  display:none;
+  position:fixed;
+  inset:0;
+  background:#F2F0EB;
+  z-index:500;
+  overflow-y:auto;
+  font-family:'Inter',system-ui,sans-serif;
+  -webkit-font-smoothing:antialiased;
+">
+
+  <!-- NAV -->
+  <div style="position:sticky;top:0;z-index:10;background:#F2F0EB;border-bottom:1px solid #e0ddd8;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:56px;">
+    <button onclick="closeSountang()" style="background:none;border:none;cursor:pointer;font-size:14px;color:#888;display:flex;align-items:center;gap:8px;font-family:inherit;">← Back</button>
+    <span onclick="closeSountang();goHome();" style="font-family:'Passero One',Georgia,serif;font-size:20px;font-weight:400;letter-spacing:0.02em;cursor:pointer;">Saekyoung</span>
+    <div style="width:60px;"></div>
+  </div>
+
+  <div style="max-width:1100px;margin:0 auto;padding:0 48px;">
+
+    <!-- HERO -->
+    <div style="padding:64px 0 0;">
+      <p style="font-size:12px;text-transform:uppercase;letter-spacing:0.1em;color:#888;margin-bottom:16px;">Brand Identity · Space Design · 2023</p>
+      <h1 style="font-family:'Playfair Display',Georgia,serif;font-size:clamp(48px,8vw,80px);font-weight:400;letter-spacing:-0.03em;line-height:1.05;margin-bottom:40px;">소운탕</h1>
+      <div style="display:flex;gap:48px;padding:28px 0;border-top:1px solid #e0ddd8;border-bottom:1px solid #e0ddd8;margin-bottom:56px;flex-wrap:wrap;">
+        <div style="display:flex;flex-direction:column;gap:4px;"><span style="font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:#888;">Role</span><span style="font-size:14px;font-weight:500;">Brand Designer</span></div>
+        <div style="display:flex;flex-direction:column;gap:4px;"><span style="font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:#888;">Year</span><span style="font-size:14px;font-weight:500;">2023</span></div>
+        <div style="display:flex;flex-direction:column;gap:4px;"><span style="font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:#888;">Type</span><span style="font-size:14px;font-weight:500;">Branding, Space, Editorial</span></div>
+      </div>
+    </div>
+
+    <!-- COVER -->
+    <div style="width:100%;border-radius:16px;overflow:hidden;background:#1a1918;margin-bottom:80px;">
+      <svg viewBox="0 0 1100 450" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;" preserveAspectRatio="xMidYMid slice">
+        <rect width="1100" height="450" fill="#1a1918"/>
+        <rect x="0" y="260" width="1100" height="190" fill="#141210"/>
+        <rect x="40" y="245" width="650" height="28" rx="4" fill="#2a2520"/>
+        <ellipse cx="370" cy="275" rx="280" ry="38" fill="#1e2520" opacity="0.7"/>
+        <line x1="780" y1="0" x2="775" y2="260" stroke="#3a4535" stroke-width="9"/>
+        <line x1="820" y1="0" x2="818" y2="260" stroke="#3a4535" stroke-width="6" opacity="0.7"/>
+        <line x1="860" y1="0" x2="856" y2="260" stroke="#3a4535" stroke-width="8" opacity="0.8"/>
+        <line x1="900" y1="0" x2="898" y2="260" stroke="#3a4535" stroke-width="5" opacity="0.6"/>
+        <line x1="940" y1="0" x2="937" y2="260" stroke="#3a4535" stroke-width="9"/>
+        <line x1="980" y1="0" x2="978" y2="260" stroke="#3a4535" stroke-width="6" opacity="0.7"/>
+        <line x1="1020" y1="0" x2="1018" y2="260" stroke="#3a4535" stroke-width="7"/>
+        <rect x="250" y="230" width="14" height="20" rx="3" fill="#d4a855" opacity="0.9"/>
+        <ellipse cx="257" cy="250" rx="12" ry="18" fill="#d4a855" opacity="0.12"/>
+        <rect x="450" y="236" width="12" height="18" rx="3" fill="#d4a855" opacity="0.85"/>
+        <ellipse cx="456" cy="254" rx="10" ry="15" fill="#d4a855" opacity="0.1"/>
+        <ellipse cx="320" cy="255" rx="140" ry="22" fill="#fff" opacity="0.03"/>
+        <rect x="80" y="50" width="6" height="6" rx="1" fill="#DB0F0F" opacity="0.9"/>
+        <text x="94" y="60" font-family="serif" font-size="20" font-weight="700" fill="#fff" opacity="0.85">소운탕</text>
+      </svg>
+    </div>
+
+    <!-- OVERVIEW -->
+    <div style="margin-bottom:80px;">
+      <p style="font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:#888;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid #e0ddd8;">Overview</p>
+      <p style="font-size:16px;line-height:1.85;color:#333;max-width:680px;margin-bottom:16px;">소운탕은 도심 속에서 잠시 멈춰 자신을 돌아볼 수 있는 휴식 공간입니다. 자연의 흐름을 담은 공간 구성과 따뜻한 온기의 경험을 통해 일상의 긴장을 내려놓고 온전한 쉼을 제공합니다.</p>
+      <p style="font-size:16px;line-height:1.85;color:#333;max-width:680px;">방문객은 다양한 입욕 시설과 휴게 공간을 이용하며 몸과 마음의 균형을 회복할 수 있습니다.</p>
+    </div>
+
+    <!-- NAMING -->
+    <div style="margin-bottom:80px;">
+      <p style="font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:#888;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid #e0ddd8;">Naming</p>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+        <div style="background:#fff;border-radius:12px;padding:28px 24px;border:1px solid #e0ddd8;">
+          <div style="font-family:'Playfair Display',serif;font-size:36px;color:#DB0F0F;margin-bottom:6px;">素</div>
+          <div style="font-size:12px;color:#888;margin-bottom:12px;">바탕 소</div>
+          <div style="font-size:13px;line-height:1.7;color:#444;">꾸밈을 덜어내고 본래의 나로 돌아갑니다.</div>
+        </div>
+        <div style="background:#fff;border-radius:12px;padding:28px 24px;border:1px solid #e0ddd8;">
+          <div style="font-family:'Playfair Display',serif;font-size:36px;color:#DB0F0F;margin-bottom:6px;">雲</div>
+          <div style="font-size:12px;color:#888;margin-bottom:12px;">구름 운</div>
+          <div style="font-size:13px;line-height:1.7;color:#444;">생각은 흘려보내고 감각에 조용히 머무릅니다.</div>
+        </div>
+        <div style="background:#fff;border-radius:12px;padding:28px 24px;border:1px solid #e0ddd8;">
+          <div style="font-family:'Playfair Display',serif;font-size:36px;color:#DB0F0F;margin-bottom:6px;">湯</div>
+          <div style="font-size:12px;color:#888;margin-bottom:12px;">끓을 탕</div>
+          <div style="font-size:13px;line-height:1.7;color:#444;">온기 속에서 나의 상태를 다시 느낍니다.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BRAND VALUES -->
+    <div style="margin-bottom:80px;">
+      <p style="font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:#888;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid #e0ddd8;">Brand Core Value</p>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+        <div style="background:#fff;border:1px solid #e0ddd8;border-radius:12px;padding:28px 24px;text-align:center;">
+          <div style="font-family:'Playfair Display',serif;font-size:22px;margin-bottom:4px;">본질</div>
+          <div style="font-size:12px;color:#888;margin-bottom:14px;text-transform:uppercase;letter-spacing:0.06em;">Simplicity</div>
+          <div style="font-size:13px;line-height:1.7;color:#555;">고요하고 편안한 공간속에서 불필요한 요소를 덜어내고, 목욕과 휴식의 본질에 집중합니다.</div>
+        </div>
+        <div style="background:#fff;border:1px solid #e0ddd8;border-radius:12px;padding:28px 24px;text-align:center;">
+          <div style="font-family:'Playfair Display',serif;font-size:22px;margin-bottom:4px;">자연</div>
+          <div style="font-size:12px;color:#888;margin-bottom:14px;text-transform:uppercase;letter-spacing:0.06em;">Nature</div>
+          <div style="font-size:13px;line-height:1.7;color:#555;">소운탕 속의 자연을 보고 느끼며 긴장 되어있던 마음을 천천히 이완합니다.</div>
+        </div>
+        <div style="background:#fff;border:1px solid #e0ddd8;border-radius:12px;padding:28px 24px;text-align:center;">
+          <div style="font-family:'Playfair Display',serif;font-size:22px;margin-bottom:4px;">고요</div>
+          <div style="font-size:12px;color:#888;margin-bottom:14px;text-transform:uppercase;letter-spacing:0.06em;">Calm</div>
+          <div style="font-size:13px;line-height:1.7;color:#555;">도시속의 불필요한 소음에서 벗어나 고요한 시간을 가집니다.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COLOR -->
+    <div style="margin-bottom:80px;">
+      <p style="font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:#888;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid #e0ddd8;">Color</p>
+      <div style="display:flex;border-radius:12px;overflow:hidden;height:80px;">
+        <div style="flex:1;background:#202020;display:flex;flex-direction:column;justify-content:flex-end;padding:10px 14px;">
+          <span style="font-size:10px;font-weight:500;color:#fff;">Pantone 419 C</span>
+          <span style="font-size:10px;color:rgba(255,255,255,0.6);">#202020</span>
+        </div>
+        <div style="flex:1;background:#DB0F0F;display:flex;flex-direction:column;justify-content:flex-end;padding:10px 14px;">
+          <span style="font-size:10px;font-weight:500;color:#fff;">Pantone 2347 C</span>
+          <span style="font-size:10px;color:rgba(255,255,255,0.6);">#DB0F0F</span>
+        </div>
+        <div style="flex:1;background:#BEBEBE;display:flex;flex-direction:column;justify-content:flex-end;padding:10px 14px;">
+          <span style="font-size:10px;font-weight:500;color:#fff;">Cool Gray 4 C</span>
+          <span style="font-size:10px;color:rgba(255,255,255,0.6);">#BEBEBE</span>
+        </div>
+        <div style="flex:1;background:#5DAC93;display:flex;flex-direction:column;justify-content:flex-end;padding:10px 14px;">
+          <span style="font-size:10px;font-weight:500;color:#fff;">Pantone 2459 C</span>
+          <span style="font-size:10px;color:rgba(255,255,255,0.6);">#5DAC93</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- LOGO -->
+    <div style="margin-bottom:80px;">
+      <p style="font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:#888;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid #e0ddd8;">Symbol & Logo</p>
+      <div style="background:#fff;border:1px solid #e0ddd8;border-radius:12px;padding:48px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
+        <svg viewBox="0 0 500 160" xmlns="http://www.w3.org/2000/svg" style="max-width:400px;width:100%;">
+          <rect x="30" y="30" width="90" height="100" rx="6" fill="#DB0F0F"/>
+          <path d="M55 105 L75 55 L95 105" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="75" cy="78" r="10" fill="none" stroke="#fff" stroke-width="4"/>
+          <text x="145" y="110" font-family="serif" font-size="60" font-weight="900" fill="#202020" letter-spacing="-2">소운탕</text>
+        </svg>
+      </div>
+      <p style="font-size:14px;line-height:1.8;color:#444;max-width:680px;">소운탕의 ㅅ, ㅇ을 형상한 심볼입니다. 'ㅅ'은 산의 실루엣을, 'ㅇ'은 물결치는 탕의 움직임을 표현했습니다. 한국의 전통적인 인감(도장) 문화를 계승하여, '변치 않는 약속'과 '보증'의 의미를 가집니다.</p>
+    </div>
+
+    <!-- SPACE -->
+    <div style="margin-bottom:80px;">
+      <p style="font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:#888;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid #e0ddd8;">Space — Bath</p>
+      <p style="font-size:14px;line-height:1.8;color:#444;margin-bottom:24px;">소운탕은 38.5℃의 메인탕, 41℃의 고온탕, 39℃의 야외탕으로 구성되어 있습니다.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <div style="border-radius:10px;overflow:hidden;background:#1a1918;aspect-ratio:3/2;">
+          <svg viewBox="0 0 480 320" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
+            <rect width="480" height="320" fill="#1a1918"/>
+            <rect x="0" y="200" width="480" height="120" fill="#141210"/>
+            <rect x="40" y="185" width="320" height="25" rx="3" fill="#2a2520"/>
+            <ellipse cx="200" cy="215" rx="180" ry="25" fill="#1e2520" opacity="0.6"/>
+            <rect x="200" y="20" width="250" height="170" rx="2" fill="none" stroke="#3a3530" stroke-width="3"/>
+            <line x1="275" y1="20" x2="275" y2="190" stroke="#3a3530" stroke-width="2"/>
+            <line x1="350" y1="20" x2="350" y2="190" stroke="#3a3530" stroke-width="2"/>
+            <line x1="200" y1="105" x2="450" y2="105" stroke="#3a3530" stroke-width="2"/>
+            <line x1="230" y1="20" x2="230" y2="180" stroke="#3a4535" stroke-width="6" opacity="0.8"/>
+            <line x1="260" y1="20" x2="260" y2="180" stroke="#3a4535" stroke-width="5" opacity="0.6"/>
+            <line x1="310" y1="20" x2="310" y2="180" stroke="#3a4535" stroke-width="7" opacity="0.9"/>
+            <line x1="370" y1="20" x2="370" y2="180" stroke="#3a4535" stroke-width="5" opacity="0.7"/>
+            <rect x="100" y="165" width="10" height="16" rx="2" fill="#d4a855" opacity="0.9"/>
+            <ellipse cx="105" cy="181" rx="9" ry="14" fill="#d4a855" opacity="0.12"/>
+            <rect x="0" y="20" width="190" height="175" fill="#252220"/>
+            <line x1="0" y1="60" x2="190" y2="60" stroke="#1e1c1a" stroke-width="1"/>
+            <line x1="0" y1="100" x2="190" y2="100" stroke="#1e1c1a" stroke-width="1"/>
+            <line x1="0" y1="140" x2="190" y2="140" stroke="#1e1c1a" stroke-width="1"/>
+          </svg>
+        </div>
+        <div style="border-radius:10px;overflow:hidden;background:#141210;aspect-ratio:3/2;">
+          <svg viewBox="0 0 480 320" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
+            <rect width="480" height="320" fill="#141210"/>
+            <rect x="0" y="0" width="480" height="180" fill="#0d1510"/>
+            <line x1="350" y1="0" x2="340" y2="180" stroke="#1a2518" stroke-width="12"/>
+            <line x1="400" y1="0" x2="395" y2="180" stroke="#1a2518" stroke-width="8" opacity="0.7"/>
+            <line x1="430" y1="0" x2="428" y2="180" stroke="#1a2518" stroke-width="10" opacity="0.8"/>
+            <ellipse cx="240" cy="240" rx="200" ry="50" fill="#1a2018" opacity="0.9"/>
+            <rect x="40" y="220" width="400" height="20" rx="4" fill="#2a2520"/>
+            <ellipse cx="80" cy="215" rx="35" ry="20" fill="#2a2825"/>
+            <ellipse cx="390" cy="220" rx="45" ry="22" fill="#252320"/>
+            <rect x="165" y="200" width="12" height="18" rx="3" fill="#d4a855" opacity="0.9"/>
+            <ellipse cx="171" cy="218" rx="10" ry="15" fill="#d4a855" opacity="0.15"/>
+            <rect x="295" y="195" width="10" height="16" rx="2" fill="#d4a855" opacity="0.85"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- APPLICATIONS -->
+    <div style="margin-bottom:80px;">
+      <p style="font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:#888;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid #e0ddd8;">Applications</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <div style="border-radius:12px;overflow:hidden;background:#f0ede5;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;padding:24px;">
+          <svg viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg" style="width:100%;">
+            <rect width="400" height="225" fill="#f0ede5"/>
+            <rect x="160" y="30" width="220" height="140" rx="10" fill="#fff" stroke="#e0ddd8" stroke-width="1"/>
+            <rect x="175" y="50" width="16" height="18" rx="3" fill="#DB0F0F"/>
+            <text x="198" y="63" font-family="serif" font-size="14" font-weight="700" fill="#202020">소운탕</text>
+            <rect x="175" y="130" width="190" height="25" rx="2" fill="#202020" opacity="0.8"/>
+            <rect x="30" y="30" width="120" height="140" rx="6" fill="#e8e4dc" stroke="#ddd" stroke-width="1"/>
+            <rect x="52" y="82" width="24" height="28" rx="3" fill="#f0ede5"/>
+            <path d="M58 104 L64 88 L70 104" fill="none" stroke="#DB0F0F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div style="border-radius:12px;overflow:hidden;background:#202020;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;padding:24px;">
+          <svg viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg" style="width:100%;">
+            <rect width="400" height="225" fill="#202020"/>
+            <rect x="160" y="30" width="220" height="140" rx="10" fill="#fff"/>
+            <rect x="175" y="50" width="16" height="18" rx="3" fill="#DB0F0F"/>
+            <text x="198" y="63" font-family="serif" font-size="14" font-weight="700" fill="#202020">소운탕</text>
+            <rect x="175" y="130" width="190" height="25" rx="2" fill="#202020" opacity="0.8"/>
+            <rect x="30" y="30" width="120" height="140" rx="6" fill="#303030"/>
+            <rect x="52" y="82" width="24" height="28" rx="3" fill="#202020"/>
+            <path d="M58 104 L64 88 L70 104" fill="none" stroke="#DB0F0F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div style="border-radius:12px;overflow:hidden;background:#e8e5e0;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;">
+          <svg viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg" style="width:100%;">
+            <rect width="400" height="225" fill="#e8e5e0"/>
+            <path d="M130 40 L100 70 L90 225 L190 225 L200 130 L210 225 L310 225 L300 70 L270 40 L240 80 L200 60 L160 80 Z" fill="#202020"/>
+            <path d="M160 80 L200 60 L240 80 L220 100 L200 90 L180 100 Z" fill="#181818"/>
+            <rect x="155" y="115" width="14" height="16" rx="2" fill="#fff" opacity="0.8"/>
+            <text x="172" y="127" font-family="serif" font-size="10" font-weight="700" fill="#fff" opacity="0.8">소운탕</text>
+          </svg>
+        </div>
+        <div style="border-radius:12px;overflow:hidden;background:#f5f2eb;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;">
+          <svg viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg" style="width:100%;">
+            <rect width="400" height="225" fill="#f5f2eb"/>
+            <rect x="10" y="20" width="85" height="185" rx="6" fill="#fafaf8" stroke="#e0ddd8" stroke-width="1"/>
+            <rect x="105" y="20" width="85" height="185" rx="6" fill="#fafaf8" stroke="#e0ddd8" stroke-width="1"/>
+            <rect x="200" y="20" width="85" height="185" rx="6" fill="#fafaf8" stroke="#e0ddd8" stroke-width="1"/>
+            <rect x="295" y="20" width="95" height="185" rx="6" fill="#fafaf8" stroke="#e0ddd8" stroke-width="1"/>
+            <circle cx="40" cy="80" r="12" fill="none" stroke="#202020" stroke-width="2"/>
+            <circle cx="62" cy="80" r="12" fill="none" stroke="#202020" stroke-width="2"/>
+            <circle cx="147" cy="78" r="18" fill="none" stroke="#202020" stroke-width="2"/>
+            <line x1="134" y1="65" x2="160" y2="91" stroke="#202020" stroke-width="2"/>
+            <circle cx="242" cy="70" r="10" fill="none" stroke="#202020" stroke-width="2"/>
+            <circle cx="342" cy="78" r="14" fill="none" stroke="#202020" stroke-width="2"/>
+            <circle cx="342" cy="78" r="6" fill="none" stroke="#202020" stroke-width="1.5"/>
+            <line x1="330" y1="66" x2="354" y2="90" stroke="#202020" stroke-width="2"/>
+            <text x="13" y="155" font-family="sans-serif" font-size="8" fill="#202020">소근소근</text>
+            <text x="108" y="155" font-family="sans-serif" font-size="8" fill="#202020">음식물 금지</text>
+            <text x="203" y="155" font-family="sans-serif" font-size="8" fill="#202020">샤워 필수</text>
+            <text x="298" y="155" font-family="sans-serif" font-size="8" fill="#202020">촬영 금지</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- BACK BUTTON -->
+    <div style="padding:40px 0 80px;border-top:1px solid #e0ddd8;display:flex;justify-content:space-between;">
+      <button onclick="closeSountang()" style="background:none;border:none;cursor:pointer;font-size:14px;color:#888;font-family:inherit;">← Back to Work</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- OHi FULLSCREEN PAGE -->
+<div id="ohiPage" style="display:none;position:fixed;inset:0;background:#0a0a0a;z-index:500;overflow-y:auto;font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased;color:#fff;">
+
+  <div style="position:sticky;top:0;z-index:10;background:rgba(10,10,10,0.95);border-bottom:1px solid #222;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:56px;">
+    <button onclick="closeOhi()" style="background:none;border:none;cursor:pointer;font-size:14px;color:#888;display:flex;align-items:center;gap:8px;font-family:inherit;">← Back</button>
+    <span onclick="closeOhi();goHome();" style="font-family:'Passero One',Georgia,serif;font-size:20px;font-weight:400;letter-spacing:0.02em;color:#fff;cursor:pointer;">Saekyoung</span>
+    <div style="width:60px;"></div>
+  </div>
+
+  <div style="max-width:1100px;margin:0 auto;padding:0 48px;">
+
+    <!-- HERO -->
+    <div style="padding:64px 0 0;">
+      <p style="font-size:12px;text-transform:uppercase;letter-spacing:0.1em;color:#666;margin-bottom:16px;">Brand Identity · Product Design · 2026</p>
+      <h1 style="font-family:'Playfair Display',Georgia,serif;font-size:clamp(48px,8vw,80px);font-weight:400;letter-spacing:-0.03em;line-height:1.05;margin-bottom:16px;">OHi</h1>
+      <p style="font-size:18px;color:#aaa;margin-bottom:40px;font-style:italic;">Blooming even in the darkest moments.</p>
+      <div style="display:flex;gap:48px;padding:28px 0;border-top:1px solid #222;border-bottom:1px solid #222;margin-bottom:56px;flex-wrap:wrap;">
+        <div style="display:flex;flex-direction:column;gap:4px;"><span style="font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:#666;">Role</span><span style="font-size:14px;font-weight:500;">Brand Designer</span></div>
+        <div style="display:flex;flex-direction:column;gap:4px;"><span style="font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:#666;">Year</span><span style="font-size:14px;font-weight:500;">2026</span></div>
+        <div style="display:flex;flex-direction:column;gap:4px;"><span style="font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:#666;">Type</span><span style="font-size:14px;font-weight:500;">Brand Identity, Product</span></div>
+        <div style="display:flex;flex-direction:column;gap:4px;"><span style="font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:#666;">Client</span><span style="font-size:14px;font-weight:500;">Netflix · Internship</span></div>
+      </div>
+    </div>
+
+    <!-- COVER -->
+    <div style="width:100%;border-radius:16px;overflow:hidden;margin-bottom:80px;background:#050505;">
+      <svg viewBox="0 0 1100 480" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;">
+        <rect width="1100" height="480" fill="#050505"/>
+        <!-- Rain effect -->
+        <line x1="100" y1="0" x2="80" y2="480" stroke="#ffffff" stroke-width="0.5" opacity="0.06"/>
+        <line x1="200" y1="0" x2="180" y2="480" stroke="#ffffff" stroke-width="0.5" opacity="0.04"/>
+        <line x1="300" y1="0" x2="280" y2="480" stroke="#ffffff" stroke-width="0.5" opacity="0.07"/>
+        <line x1="400" y1="0" x2="380" y2="480" stroke="#ffffff" stroke-width="0.5" opacity="0.05"/>
+        <line x1="500" y1="0" x2="480" y2="480" stroke="#ffffff" stroke-width="0.5" opacity="0.06"/>
+        <line x1="600" y1="0" x2="580" y2="480" stroke="#ffffff" stroke-width="0.5" opacity="0.04"/>
+        <line x1="700" y1="0" x2="680" y2="480" stroke="#ffffff" stroke-width="0.5" opacity="0.07"/>
+        <line x1="800" y1="0" x2="780" y2="480" stroke="#ffffff" stroke-width="0.5" opacity="0.05"/>
+        <line x1="900" y1="0" x2="880" y2="480" stroke="#ffffff" stroke-width="0.5" opacity="0.06"/>
+        <line x1="1000" y1="0" x2="980" y2="480" stroke="#ffffff" stroke-width="0.5" opacity="0.04"/>
+        <!-- Umbrella shape - scallop outline -->
+        <path d="M550 100 Q550 60 610 80 Q640 60 660 90 Q690 65 710 90 Q740 65 760 90 Q790 70 800 100 Q820 130 800 160 Q780 140 760 160 Q740 140 710 160 Q690 140 660 160 Q640 140 610 160 Q580 140 550 160 Q530 130 550 100 Z" fill="none" stroke="#F2B844" stroke-width="2" opacity="0.9"/>
+        <!-- Umbrella body -->
+        <path d="M550 130 Q675 180 800 130 L675 340 Z" fill="#1a1a1a" opacity="0.8"/>
+        <!-- Halo line glow -->
+        <path d="M550 100 Q550 60 610 80 Q640 60 660 90 Q690 65 710 90 Q740 65 760 90 Q790 70 800 100 Q820 130 800 160 Q780 140 760 160 Q740 140 710 160 Q690 140 660 160 Q640 140 610 160 Q580 140 550 160 Q530 130 550 100 Z" fill="none" stroke="#fff" stroke-width="6" opacity="0.15" filter="blur(4px)"/>
+        <!-- Handle -->
+        <line x1="675" y1="340" x2="675" y2="400" stroke="#333" stroke-width="4" stroke-linecap="round"/>
+        <path d="M675 400 Q675 420 655 420 Q635 420 635 400" fill="none" stroke="#333" stroke-width="4" stroke-linecap="round"/>
+        <!-- Logo -->
+        <text x="80" y="420" font-family="sans-serif" font-size="32" font-weight="900" fill="#fff" letter-spacing="2">●○i</text>
+        <!-- Brand copy -->
+        <text x="80" y="80" font-family="sans-serif" font-size="14" fill="#888">밤 속에서도, 당신은 보여야 하니까</text>
+      </svg>
+    </div>
+
+    <!-- OVERVIEW -->
+    <div style="margin-bottom:80px;">
+      <p style="font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:#555;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid #222;">Overview</p>
+      <p style="font-size:16px;line-height:1.85;color:#bbb;max-width:680px;margin-bottom:16px;">OHi는 'Oh'와 'Hi'의 감정을 담은 이름입니다. 비 오는 밤, 쉽게 배경이 되어버리는 도시 속에서도 사용자의 존재가 자연스럽게 인식되기를 바라는 마음에서 시작되었습니다.</p>
+      <p style="font-size:16px;line-height:1.85;color:#bbb;max-width:680px;">'Oh'는 어둠 속에서 존재를 발견하는 순간의 감탄을, 'Hi'는 서로의 존재를 인식하는 작은 인사를 의미합니다.</p>
+    </div>
+
+    <!-- PROBLEM & SOLUTION -->
+    <div style="margin-bottom:80px;">
+      <p style="font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:#555;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid #222;">Problem & Solution</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+        <div style="background:#111;border-radius:12px;padding:32px;border:1px solid #222;">
+          <p style="font-size:12px;text-transform:uppercase;letter-spacing:0.08em;color:#555;margin-bottom:16px;">Problem</p>
+          <h3 style="font-family:'Playfair Display',serif;font-size:22px;font-weight:400;margin-bottom:16px;line-height:1.3;">비오는 밤,<br>우리는 쉽게 보이지 않는다.</h3>
+          <div style="display:flex;gap:24px;margin-top:24px;">
+            <div style="text-align:center;"><div style="font-size:28px;font-weight:700;color:#F2B844;">63%</div><div style="font-size:11px;color:#666;margin-top:4px;">보행자 사망사고<br>야간비율</div></div>
+            <div style="text-align:center;"><div style="font-size:28px;font-weight:700;color:#F2B844;">1.4배</div><div style="font-size:11px;color:#666;margin-top:4px;">우천시<br>사고발생 비율</div></div>
+            <div style="text-align:center;"><div style="font-size:28px;font-weight:700;color:#F2B844;">20-30m</div><div style="font-size:11px;color:#666;margin-top:4px;">야간 보행자<br>발견거리</div></div>
+          </div>
+        </div>
+        <div style="background:#111;border-radius:12px;padding:32px;border:1px solid #222;">
+          <p style="font-size:12px;text-transform:uppercase;letter-spacing:0.08em;color:#555;margin-bottom:16px;">Solution</p>
+          <h3 style="font-family:'Playfair Display',serif;font-size:22px;font-weight:400;margin-bottom:16px;line-height:1.3;">OHi Halo Line<br>보이지 않던 존재를,<br>안전하게 드러내는 우산.</h3>
+          <div style="display:flex;gap:16px;margin-top:24px;">
+            <div style="background:#1a1a1a;border-radius:8px;padding:12px 16px;text-align:center;flex:1;"><div style="font-size:11px;color:#F2B844;font-weight:600;">Protection</div><div style="font-size:11px;color:#666;margin-top:4px;">안전성</div></div>
+            <div style="background:#1a1a1a;border-radius:8px;padding:12px 16px;text-align:center;flex:1;"><div style="font-size:11px;color:#F2B844;font-weight:600;">Visibility</div><div style="font-size:11px;color:#666;margin-top:4px;">시인성</div></div>
+            <div style="background:#1a1a1a;border-radius:8px;padding:12px 16px;text-align:center;flex:1;"><div style="font-size:11px;color:#F2B844;font-weight:600;">Identity</div><div style="font-size:11px;color:#666;margin-top:4px;">브랜드</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRODUCT -->
+    <div style="margin-bottom:80px;">
+      <p style="font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:#555;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid #222;">Product</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <div style="background:#111;border-radius:12px;aspect-ratio:4/3;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px;border:1px solid #1a1a1a;">
+          <svg viewBox="0 0 300 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:200px;">
+            <path d="M150 40 Q150 10 175 25 Q195 5 215 30 Q235 10 255 35 Q275 15 285 45 Q298 75 280 100 Q265 85 245 100 Q225 85 205 100 Q185 85 165 100 Q145 85 125 100 Q105 85 85 100 Q65 80 60 45 Q70 15 90 30 Q110 5 130 25 Q145 10 150 40 Z" fill="#1a1a1a" stroke="#fff" stroke-width="1.5"/>
+            <path d="M60 75 Q150 120 285 75 L210 240 Z" fill="#111"/>
+            <line x1="210" y1="240" x2="210" y2="280" stroke="#333" stroke-width="5" stroke-linecap="round"/>
+            <path d="M210 280 Q210 300 195 300 Q178 300 178 280" fill="none" stroke="#333" stroke-width="5" stroke-linecap="round"/>
+          </svg>
+          <p style="font-size:12px;color:#666;margin-top:16px;text-align:center;">Black — 낮에는 차분하게</p>
+        </div>
+        <div style="background:#1a1500;border-radius:12px;aspect-ratio:4/3;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px;border:1px solid #2a2000;">
+          <svg viewBox="0 0 300 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:200px;">
+            <path d="M150 40 Q150 10 175 25 Q195 5 215 30 Q235 10 255 35 Q275 15 285 45 Q298 75 280 100 Q265 85 245 100 Q225 85 205 100 Q185 85 165 100 Q145 85 125 100 Q105 85 85 100 Q65 80 60 45 Q70 15 90 30 Q110 5 130 25 Q145 10 150 40 Z" fill="#F2B844" stroke="#F2B844" stroke-width="1.5"/>
+            <path d="M60 75 Q150 120 285 75 L210 240 Z" fill="#d4960a"/>
+            <line x1="210" y1="240" x2="210" y2="280" stroke="#333" stroke-width="5" stroke-linecap="round"/>
+            <path d="M210 280 Q210 300 195 300 Q178 300 178 280" fill="none" stroke="#333" stroke-width="5" stroke-linecap="round"/>
+          </svg>
+          <p style="font-size:12px;color:#888;margin-top:16px;text-align:center;">Yellow — 비 오는 밤을 밝히는</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- COLOR -->
+    <div style="margin-bottom:80px;">
+      <p style="font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:#555;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid #222;">Color System</p>
+      <div style="display:flex;border-radius:12px;overflow:hidden;height:80px;">
+        <div style="flex:2;background:#000000;display:flex;flex-direction:column;justify-content:flex-end;padding:10px 14px;"><span style="font-size:10px;font-weight:500;color:#fff;">OHi Black</span><span style="font-size:10px;color:rgba(255,255,255,0.4);">#000000</span></div>
+        <div style="flex:2;background:#F2B844;display:flex;flex-direction:column;justify-content:flex-end;padding:10px 14px;"><span style="font-size:10px;font-weight:500;color:#000;">OHi Yellow</span><span style="font-size:10px;color:rgba(0,0,0,0.5);">#F2B844</span></div>
+        <div style="flex:1;background:#05031F;display:flex;flex-direction:column;justify-content:flex-end;padding:10px 14px;"><span style="font-size:10px;font-weight:500;color:#fff;">OHi Navy</span><span style="font-size:10px;color:rgba(255,255,255,0.4);">#05031F</span></div>
+        <div style="flex:1;background:#C7C7C7;display:flex;flex-direction:column;justify-content:flex-end;padding:10px 14px;"><span style="font-size:10px;font-weight:500;color:#000;">Bright Grey</span><span style="font-size:10px;color:rgba(0,0,0,0.5);">#C7C7C7</span></div>
+        <div style="flex:1;background:#ffffff;display:flex;flex-direction:column;justify-content:flex-end;padding:10px 14px;border-left:1px solid #eee;"><span style="font-size:10px;font-weight:500;color:#000;">OHi White</span><span style="font-size:10px;color:rgba(0,0,0,0.4);">#FFFFFF</span></div>
+      </div>
+    </div>
+
+    <!-- APPLICATIONS -->
+    <div style="margin-bottom:80px;">
+      <p style="font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:#555;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid #222;">Applications</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;">
+        <div style="background:#111;border-radius:12px;aspect-ratio:3/4;border:1px solid #1a1a1a;display:flex;align-items:center;justify-content:center;padding:24px;">
+          <div style="text-align:center;">
+            <div style="font-size:28px;font-weight:900;color:#F2B844;letter-spacing:2px;margin-bottom:8px;">●○i</div>
+            <div style="font-size:10px;color:#555;text-transform:uppercase;letter-spacing:2px;">POP-UP Store</div>
+            <div style="font-size:10px;color:#555;margin-top:4px;">In Seongsu</div>
+            <div style="font-size:10px;color:#444;margin-top:8px;">2026.10.30 Thu 7PM</div>
+          </div>
+        </div>
+        <div style="background:#f5f5f5;border-radius:12px;aspect-ratio:3/4;display:flex;align-items:center;justify-content:center;padding:24px;">
+          <div style="text-align:center;">
+            <div style="font-size:16px;font-weight:800;color:#000;line-height:1.3;margin-bottom:8px;">Blooming<br>in the Rain</div>
+            <svg viewBox="0 0 100 100" style="width:60px;margin:8px auto;display:block;">
+              <path d="M50 15 Q50 5 58 10 Q65 3 72 12 Q79 5 86 14 Q93 7 96 18 Q100 30 93 38 Q88 31 80 38 Q73 31 66 38 Q59 31 52 38 Q45 31 38 38 Q30 31 25 38 Q18 28 22 15 Q28 5 36 10 Q43 3 50 15 Z" fill="#F2B844"/>
+              <line x1="66" y1="38" x2="66" y2="80" stroke="#333" stroke-width="3"/>
+            </svg>
+            <div style="font-size:8px;color:#888;">Umbrella by OHi</div>
+          </div>
+        </div>
+        <div style="background:#05031F;border-radius:12px;aspect-ratio:3/4;display:flex;align-items:center;justify-content:center;padding:24px;border:1px solid #0a0828;">
+          <div style="text-align:center;">
+            <div style="font-size:22px;font-weight:900;color:#fff;letter-spacing:2px;margin-bottom:16px;">●○i</div>
+            <div style="width:50px;height:2px;background:#F2B844;margin:0 auto 16px;"></div>
+            <div style="font-size:9px;color:#888;line-height:1.6;">비 오는 밤에도,<br>당신의 존재가<br>자연스럽게 드러납니다.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="padding:40px 0 80px;border-top:1px solid #222;">
+      <button onclick="closeOhi()" style="background:none;border:none;cursor:pointer;font-size:14px;color:#666;font-family:inherit;">← Back to Work</button>
+    </div>
+  </div>
+</div>
+
+<!-- WILLOG FULLSCREEN PAGE -->
+<div id="willogPage" style="display:none;position:fixed;inset:0;background:#F2F0EB;z-index:500;overflow-y:auto;font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased;">
+
+  <div style="position:sticky;top:0;z-index:10;background:#F2F0EB;border-bottom:1px solid #e0ddd8;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:56px;">
+    <button onclick="closeWillog()" style="background:none;border:none;cursor:pointer;font-size:14px;color:#888;display:flex;align-items:center;gap:8px;font-family:inherit;">← Back</button>
+    <span onclick="closeWillog();goHome();" style="font-family:'Passero One',Georgia,serif;font-size:20px;font-weight:400;letter-spacing:0.02em;cursor:pointer;">Saekyoung</span>
+    <div style="width:60px;"></div>
+  </div>
+
+  <div style="max-width:1100px;margin:0 auto;padding:0 48px;">
+
+    <!-- HERO -->
+    <div style="padding:64px 0 0;">
+      <p style="font-size:12px;text-transform:uppercase;letter-spacing:0.1em;color:#888;margin-bottom:16px;">BX Design · 2025</p>
+      <h1 style="font-family:'Playfair Display',Georgia,serif;font-size:clamp(48px,8vw,80px);font-weight:400;letter-spacing:-0.03em;line-height:1.05;margin-bottom:40px;">Willog</h1>
+      <div style="display:flex;gap:48px;padding:28px 0;border-top:1px solid #e0ddd8;border-bottom:1px solid #e0ddd8;margin-bottom:56px;flex-wrap:wrap;">
+        <div style="display:flex;flex-direction:column;gap:4px;"><span style="font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:#888;">Role</span><span style="font-size:14px;font-weight:500;">Brand / BX Designer</span></div>
+        <div style="display:flex;flex-direction:column;gap:4px;"><span style="font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:#888;">Year</span><span style="font-size:14px;font-weight:500;">2025.06 — 07</span></div>
+        <div style="display:flex;flex-direction:column;gap:4px;"><span style="font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:#888;">Type</span><span style="font-size:14px;font-weight:500;">회사소개서 리디자인</span></div>
+        <div style="display:flex;flex-direction:column;gap:4px;"><span style="font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:#888;">Tools</span><span style="font-size:14px;font-weight:500;">PowerPoint, Photoshop</span></div>
+      </div>
+    </div>
+
+    <!-- COVER -->
+    <div style="width:100%;border-radius:16px;overflow:hidden;margin-bottom:80px;background:#1a2a6c;">
+      <svg viewBox="0 0 1100 450" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;">
+        <defs>
+          <linearGradient id="wbg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#1a2a6c"/>
+            <stop offset="100%" style="stop-color:#0a1a4c"/>
+          </linearGradient>
+        </defs>
+        <rect width="1100" height="450" fill="url(#wbg)"/>
+        <!-- Grid lines -->
+        <line x1="0" y1="150" x2="1100" y2="150" stroke="#ffffff" stroke-width="0.5" opacity="0.08"/>
+        <line x1="0" y1="300" x2="1100" y2="300" stroke="#ffffff" stroke-width="0.5" opacity="0.08"/>
+        <line x1="275" y1="0" x2="275" y2="450" stroke="#ffffff" stroke-width="0.5" opacity="0.08"/>
+        <line x1="550" y1="0" x2="550" y2="450" stroke="#ffffff" stroke-width="0.5" opacity="0.08"/>
+        <line x1="825" y1="0" x2="825" y2="450" stroke="#ffffff" stroke-width="0.5" opacity="0.08"/>
+        <!-- Willog logo area -->
+        <rect x="60" y="60" width="160" height="50" rx="8" fill="#2563EB" opacity="0.9"/>
+        <text x="90" y="92" font-family="sans-serif" font-size="22" font-weight="800" fill="#fff">w willog</text>
+        <!-- Title text -->
+        <text x="60" y="180" font-family="sans-serif" font-size="38" font-weight="800" fill="#fff" opacity="0.95">윌로그</text>
+        <text x="60" y="225" font-family="sans-serif" font-size="14" fill="#93c5fd">공급망 리스크 관리,</text>
+        <text x="60" y="248" font-family="sans-serif" font-size="14" fill="#93c5fd">센서 기반 가시성과 AI 예측 인사이트로 시작하세요.</text>
+        <!-- Stats -->
+        <rect x="60" y="310" width="180" height="80" rx="8" fill="rgba(37,99,235,0.3)" stroke="#2563EB" stroke-width="1"/>
+        <text x="80" y="345" font-family="sans-serif" font-size="28" font-weight="800" fill="#fff">+100</text>
+        <text x="80" y="368" font-family="sans-serif" font-size="11" fill="#93c5fd">고객사</text>
+        <rect x="260" y="310" width="180" height="80" rx="8" fill="rgba(37,99,235,0.3)" stroke="#2563EB" stroke-width="1"/>
+        <text x="280" y="345" font-family="sans-serif" font-size="28" font-weight="800" fill="#fff">100%</text>
+        <text x="280" y="368" font-family="sans-serif" font-size="11" fill="#93c5fd">재계약율</text>
+        <rect x="460" y="310" width="180" height="80" rx="8" fill="rgba(37,99,235,0.3)" stroke="#2563EB" stroke-width="1"/>
+        <text x="480" y="345" font-family="sans-serif" font-size="28" font-weight="800" fill="#fff">0%</text>
+        <text x="480" y="368" font-family="sans-serif" font-size="11" fill="#93c5fd">이탈율</text>
+        <!-- Right side slide mockup -->
+        <rect x="700" y="40" width="360" height="370" rx="12" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+        <rect x="715" y="55" width="330" height="200" rx="8" fill="#1e3a8a"/>
+        <rect x="715" y="55" width="330" height="200" rx="8" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+        <text x="730" y="90" font-family="sans-serif" font-size="11" font-weight="700" fill="#93c5fd">w willog</text>
+        <text x="730" y="130" font-family="sans-serif" font-size="18" font-weight="800" fill="#fff">제목 Title</text>
+        <text x="730" y="155" font-family="sans-serif" font-size="10" fill="#93c5fd">부제목 Subtitle</text>
+      </svg>
+    </div>
+
+    <!-- OVERVIEW -->
+    <div style="margin-bottom:80px;">
+      <p style="font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:#888;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid #e0ddd8;">Overview</p>
+      <p style="font-size:16px;line-height:1.85;color:#333;max-width:680px;margin-bottom:16px;">기존 회사 소개서의 노후화된 디자인과 정보 구조를 개선하여, 브랜드 정체성을 효과적으로 전달하고 고객·파트너사 대상 신뢰도를 높이기 위해 리디자인을 진행했습니다.</p>
+    </div>
+
+    <!-- AS-IF / TO-BE -->
+    <div style="margin-bottom:80px;">
+      <p style="font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:#888;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid #e0ddd8;">Problem → Solution</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+        <div style="background:#fff;border-radius:12px;padding:32px;border:1px solid #e0ddd8;">
+          <p style="font-size:12px;font-weight:600;color:#ef4444;margin-bottom:16px;text-transform:uppercase;letter-spacing:0.06em;">As-if 문제</p>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:12px;">
+            <li style="font-size:13px;color:#555;line-height:1.6;padding-left:16px;position:relative;"><span style="position:absolute;left:0;color:#ef4444;">✕</span>기능·화면 위주의 설명이 많아 핵심 가치가 한눈에 들어오지 않음</li>
+            <li style="font-size:13px;color:#555;line-height:1.6;padding-left:16px;position:relative;"><span style="position:absolute;left:0;color:#ef4444;">✕</span>유사한 레이아웃으로 페이지 간 변별력 부족</li>
+            <li style="font-size:13px;color:#555;line-height:1.6;padding-left:16px;position:relative;"><span style="position:absolute;left:0;color:#ef4444;">✕</span>섹션 구분이 약해 읽는 흐름이 단절됨</li>
+          </ul>
+        </div>
+        <div style="background:#fff;border-radius:12px;padding:32px;border:1px solid #e0ddd8;">
+          <p style="font-size:12px;font-weight:600;color:#2563EB;margin-bottom:16px;text-transform:uppercase;letter-spacing:0.06em;">To-Be 개선</p>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:12px;">
+            <li style="font-size:13px;color:#555;line-height:1.6;padding-left:16px;position:relative;"><span style="position:absolute;left:0;color:#2563EB;">✓</span>다이어그램·아이콘 중심으로 이해도 향상</li>
+            <li style="font-size:13px;color:#555;line-height:1.6;padding-left:16px;position:relative;"><span style="position:absolute;left:0;color:#2563EB;">✓</span>섹션별 밀도 조절과 여백 활용으로 변주 제공</li>
+            <li style="font-size:13px;color:#555;line-height:1.6;padding-left:16px;position:relative;"><span style="position:absolute;left:0;color:#2563EB;">✓</span>일관된 컬러·그래픽 시스템으로 브랜드 고도화</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- OUTCOME -->
+    <div style="margin-bottom:80px;">
+      <p style="font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:#888;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid #e0ddd8;">Project Outcome</p>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;">
+        <div style="background:#fff;border-radius:12px;padding:24px;border:1px solid #e0ddd8;text-align:center;">
+          <div style="font-size:28px;font-weight:700;color:#2563EB;margin-bottom:8px;">100%</div>
+          <div style="font-size:12px;color:#888;line-height:1.5;">회사 메시지<br>전달 명확도 개선</div>
+        </div>
+        <div style="background:#fff;border-radius:12px;padding:24px;border:1px solid #e0ddd8;text-align:center;">
+          <div style="font-size:28px;font-weight:700;color:#2563EB;margin-bottom:8px;">↑</div>
+          <div style="font-size:12px;color:#888;line-height:1.5;">브랜드 디자인<br>일관성 향상</div>
+        </div>
+        <div style="background:#fff;border-radius:12px;padding:24px;border:1px solid #e0ddd8;text-align:center;">
+          <div style="font-size:28px;font-weight:700;color:#2563EB;margin-bottom:8px;">↑</div>
+          <div style="font-size:12px;color:#888;line-height:1.5;">자료 완성도 및<br>전문성 인식 향상</div>
+        </div>
+        <div style="background:#fff;border-radius:12px;padding:24px;border:1px solid #e0ddd8;text-align:center;">
+          <div style="font-size:28px;font-weight:700;color:#2563EB;margin-bottom:8px;">↑</div>
+          <div style="font-size:12px;color:#888;line-height:1.5;">외부 공유 자료<br>활용도 증가</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="padding:40px 0 80px;border-top:1px solid #e0ddd8;">
+      <button onclick="closeWillog()" style="background:none;border:none;cursor:pointer;font-size:14px;color:#888;font-family:inherit;">← Back to Work</button>
+    </div>
+  </div>
+</div>
+
+<!-- ARCHIVE MODAL -->
+<div class="panel-overlay" id="archiveOverlay" onclick="closeArchive()"></div>
+
+<div id="archivePanel" style="
+  position:fixed;
+  top:0; right:0;
+  width:min(600px, 100vw);
+  height:100vh;
+  background:#fff;
+  z-index:200;
+  transform:translateX(100%);
+  transition:transform 0.4s cubic-bezier(0.4,0,0.2,1);
+  overflow-y:auto;
+  box-shadow:-8px 0 40px rgba(0,0,0,0.12);
+">
+  <div style="position:sticky;top:0;background:#fff;padding:20px 24px 0;display:flex;justify-content:flex-end;z-index:1;">
+    <button onclick="closeArchive()" style="background:#f0ede8;border:none;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:18px;color:#888;display:flex;align-items:center;justify-content:center;">✕</button>
+  </div>
+  <div style="padding:16px 40px 60px;">
+    <p id="archiveTag" style="font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:#888;margin-bottom:10px;"></p>
+    <h3 id="archiveTitle" style="font-family:'Playfair Display',Georgia,serif;font-size:28px;font-weight:400;margin-bottom:28px;letter-spacing:-0.02em;"></h3>
+    <div id="archiveBody"></div>
+  </div>
+</div>
+
+<!-- CONTACT MODAL -->
+<div class="modal-overlay" id="contactModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">×</button>
+
+    <div id="formContent">
+      <h3>Let's work together 👋</h3>
+      <p>메시지를 보내주시면 빠르게 답장드릴게요!</p>
+
+      <form id="contactForm">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" placeholder="Your name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="your@email.com" required />
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" placeholder="Hey Saekyoung, nice to meet you..." required></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Send Message →</button>
+      </form>
+    </div>
+
+    <div class="form-success" id="formSuccess">
+      <div class="check">✉️</div>
+      <h4>메시지가 전송됐어요!</h4>
+      <p>빠른 시일 내에 답장드릴게요 😊</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  function goHome() {
+    closeOhi(); closeWillog(); closeSountang();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function openOhi() {
+    document.getElementById('ohiPage').style.display = 'block';
+    document.getElementById('ohiPage').scrollTop = 0;
+    document.body.style.overflow = 'hidden';
+  }
+  function closeOhi() {
+    document.getElementById('ohiPage').style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  function openWillog() {
+    document.getElementById('willogPage').style.display = 'block';
+    document.getElementById('willogPage').scrollTop = 0;
+    document.body.style.overflow = 'hidden';
+  }
+  function closeWillog() {
+    document.getElementById('willogPage').style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  function openSountang() {
+    document.getElementById('sountangPage').style.display = 'block';
+    document.getElementById('sountangPage').scrollTop = 0;
+    document.body.style.overflow = 'hidden';
+  }
+  function closeSountang() {
+    document.getElementById('sountangPage').style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  // ── ARCHIVE MODAL ──
+  const archiveData = {
+    texture: {
+      tag: 'Reference · Texture',
+      title: 'Textural Study',
+      body: `
+        <div style="background:#c9b99a;border-radius:12px;height:200px;margin-bottom:20px;display:flex;align-items:center;justify-content:center;">
+          <svg viewBox="0 0 300 200" style="width:100%;height:100%;">
+            <rect width="300" height="200" fill="#c9b99a"/>
+            <line x1="0" y1="40" x2="300" y2="40" stroke="#b8a88a" stroke-width="1" opacity="0.5"/>
+            <line x1="0" y1="80" x2="300" y2="80" stroke="#b8a88a" stroke-width="1" opacity="0.5"/>
+            <line x1="0" y1="120" x2="300" y2="120" stroke="#b8a88a" stroke-width="1" opacity="0.5"/>
+            <line x1="0" y1="160" x2="300" y2="160" stroke="#b8a88a" stroke-width="1" opacity="0.5"/>
+            <line x1="60" y1="0" x2="60" y2="200" stroke="#b8a88a" stroke-width="1" opacity="0.5"/>
+            <line x1="120" y1="0" x2="120" y2="200" stroke="#b8a88a" stroke-width="1" opacity="0.5"/>
+            <line x1="180" y1="0" x2="180" y2="200" stroke="#b8a88a" stroke-width="1" opacity="0.5"/>
+            <line x1="240" y1="0" x2="240" y2="200" stroke="#b8a88a" stroke-width="1" opacity="0.5"/>
+          </svg>
+        </div>
+        <p style="font-size:13px;line-height:1.8;color:#555;">소재와 질감에 대한 레퍼런스 수집. 자연에서 발견한 텍스처들을 브랜드 디자인에 녹여내는 방법을 탐구했습니다.</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:16px;">
+          <span style="background:#f0ede8;border-radius:100px;padding:4px 12px;font-size:11px;color:#888;">Texture</span>
+          <span style="background:#f0ede8;border-radius:100px;padding:4px 12px;font-size:11px;color:#888;">Material</span>
+          <span style="background:#f0ede8;border-radius:100px;padding:4px 12px;font-size:11px;color:#888;">Reference</span>
+        </div>`
+    },
+    gesture: {
+      tag: 'Research · 2024',
+      title: 'Gestural Design Research',
+      body: `
+        <div style="background:#e8e4dc;border-radius:12px;padding:24px;margin-bottom:20px;">
+          <p style="font-size:12px;color:#888;margin-bottom:12px;text-transform:uppercase;letter-spacing:0.06em;">Research Notes</p>
+          <p style="font-size:14px;line-height:1.8;color:#444;">Textural · Gesture · Research</p>
+          <div style="margin-top:16px;display:flex;flex-direction:column;gap:8px;">
+            <div style="height:1px;background:#d0ccc4;"></div>
+            <p style="font-size:12px;color:#888;">손의 움직임과 제스처가 디자인 언어에 미치는 영향에 대한 리서치. 브랜드 모션과 인터랙션 디자인의 기초 연구.</p>
+          </div>
+        </div>
+        <p style="font-size:13px;line-height:1.8;color:#555;">자연스러운 인간의 몸짓에서 영감을 받아 브랜드 아이덴티티의 모션 언어를 정의하는 과정을 기록했습니다.</p>`
+    },
+    moss: {
+      tag: 'Photography · Nature',
+      title: 'Moss & Stone',
+      body: `
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px;">
+          <div style="background:#8b7355;border-radius:10px;aspect-ratio:1;"></div>
+          <div style="background:#7a6e5a;border-radius:10px;aspect-ratio:1;"></div>
+        </div>
+        <p style="font-size:13px;line-height:1.8;color:#555;">자연 속 이끼와 돌의 질감에서 발견한 컬러 팔레트. 어스톤 계열의 색감이 브랜드 디자인에 주는 따뜻함과 신뢰감을 탐구했습니다.</p>
+        <div style="display:flex;gap:8px;margin-top:16px;">
+          <div style="width:32px;height:32px;border-radius:50%;background:#8b7355;"></div>
+          <div style="width:32px;height:32px;border-radius:50%;background:#7a6e5a;"></div>
+          <div style="width:32px;height:32px;border-radius:50%;background:#c9b99a;"></div>
+          <div style="width:32px;height:32px;border-radius:50%;background:#a89070;"></div>
+        </div>`
+    },
+    tomvagee: {
+      tag: 'Reference · Typography',
+      title: 'Tomvagee',
+      body: `
+        <div style="background:#d4c9a8;border-radius:12px;padding:32px;margin-bottom:20px;text-align:center;">
+          <p style="font-family:'Playfair Display',serif;font-size:36px;color:#5a4a30;letter-spacing:-0.02em;">Tomvagee</p>
+          <p style="font-size:11px;color:#8a7a60;margin-top:8px;letter-spacing:0.1em;text-transform:uppercase;">Typography Reference</p>
+        </div>
+        <p style="font-size:13px;line-height:1.8;color:#555;">타이포그래피 레퍼런스 수집. 세리프와 산세리프의 조화로운 조합을 탐구하며 브랜드 폰트 시스템을 구성하는 데 참고했습니다.</p>`
+    },
+    nature: {
+      tag: 'Photography · 2024',
+      title: 'Nature Study',
+      body: `
+        <div style="background:#a89070;border-radius:12px;height:180px;margin-bottom:20px;display:flex;align-items:center;justify-content:center;">
+          <svg viewBox="0 0 300 180" style="width:100%;height:100%;">
+            <rect width="300" height="180" fill="#a89070"/>
+            <ellipse cx="150" cy="140" rx="120" ry="30" fill="#8a7055" opacity="0.5"/>
+            <rect x="130" y="60" width="8" height="80" fill="#6a5040"/>
+            <ellipse cx="134" cy="55" rx="30" ry="40" fill="#7a8a40" opacity="0.8"/>
+            <ellipse cx="150" cy="50" rx="25" ry="35" fill="#8a9a50" opacity="0.7"/>
+          </svg>
+        </div>
+        <p style="font-size:13px;line-height:1.8;color:#555;">자연에서 발견하는 형태와 구조. 유기적인 형태가 브랜드 디자인에 주는 생동감과 자연스러움을 기록했습니다.</p>`
+    },
+    folder: {
+      tag: 'Archive · Files',
+      title: 'Design Archive',
+      body: `
+        <div style="background:#d4c9a8;border-radius:12px;padding:24px;margin-bottom:20px;">
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <div style="background:#fff;border-radius:8px;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;border:1px solid #e0ddd8;">
+              <span style="font-size:13px;color:#444;">Brand Guidelines 2024.pdf</span>
+              <span style="font-size:11px;color:#888;">2.4 MB</span>
+            </div>
+            <div style="background:#fff;border-radius:8px;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;border:1px solid #e0ddd8;">
+              <span style="font-size:13px;color:#444;">Color System.ai</span>
+              <span style="font-size:11px;color:#888;">840 KB</span>
+            </div>
+            <div style="background:#fff;border-radius:8px;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;border:1px solid #e0ddd8;">
+              <span style="font-size:13px;color:#444;">Typography Guide.pdf</span>
+              <span style="font-size:11px;color:#888;">1.1 MB</span>
+            </div>
+          </div>
+        </div>
+        <p style="font-size:13px;line-height:1.8;color:#555;">프로젝트 과정에서 쌓인 디자인 에셋과 가이드라인 문서들의 아카이브입니다.</p>`
+    },
+    mossgreen: {
+      tag: 'Color Study · 2024',
+      title: 'Moss Green',
+      body: `
+        <div style="background:#eae6de;border-radius:12px;padding:32px;margin-bottom:20px;">
+          <div style="display:flex;gap:12px;align-items:center;">
+            <div style="width:80px;height:80px;border-radius:12px;background:#6b8c5a;"></div>
+            <div>
+              <p style="font-size:20px;font-weight:600;color:#3a5a2a;">Moss Green</p>
+              <p style="font-size:12px;color:#888;margin-top:4px;">#6B8C5A</p>
+              <p style="font-size:11px;color:#aaa;margin-top:2px;">Pantone 576 C</p>
+            </div>
+          </div>
+        </div>
+        <p style="font-size:13px;line-height:1.8;color:#555;">이끼의 초록에서 영감받은 컬러 스터디. 자연스럽고 차분한 그린 계열이 브랜드에 주는 신선함과 생명력을 탐구했습니다.</p>`
+    },
+    seasons: {
+      tag: 'Editorial · Season',
+      title: 'Seasons',
+      body: `
+        <div style="background:#d6d0c4;border-radius:12px;padding:24px;margin-bottom:20px;">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+            <div style="background:#1a1a1a;color:#fff;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:600;">PDF</div>
+            <span style="font-size:12px;color:#666;">Seasons_2024.pdf</span>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+            <div style="background:#fff;border-radius:6px;padding:10px;text-align:center;"><p style="font-size:10px;color:#888;">Spring</p><div style="width:24px;height:24px;border-radius:50%;background:#ffb3b3;margin:6px auto 0;"></div></div>
+            <div style="background:#fff;border-radius:6px;padding:10px;text-align:center;"><p style="font-size:10px;color:#888;">Summer</p><div style="width:24px;height:24px;border-radius:50%;background:#b3d9ff;margin:6px auto 0;"></div></div>
+            <div style="background:#fff;border-radius:6px;padding:10px;text-align:center;"><p style="font-size:10px;color:#888;">Autumn</p><div style="width:24px;height:24px;border-radius:50%;background:#ffcc99;margin:6px auto 0;"></div></div>
+            <div style="background:#fff;border-radius:6px;padding:10px;text-align:center;"><p style="font-size:10px;color:#888;">Winter</p><div style="width:24px;height:24px;border-radius:50%;background:#d0d0d0;margin:6px auto 0;"></div></div>
+          </div>
+        </div>
+        <p style="font-size:13px;line-height:1.8;color:#555;">계절의 색과 감성을 브랜드 언어로 번역하는 에디토리얼 프로젝트. 사계절의 무드를 컬러 팔레트와 텍스처로 표현했습니다.</p>`
+    },
+    green: {
+      tag: 'Photography · Nature',
+      title: 'Green Study',
+      body: `
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px;">
+          <div style="background:#4a6a3a;border-radius:10px;aspect-ratio:1;"></div>
+          <div style="background:#5a8a4a;border-radius:10px;aspect-ratio:1;"></div>
+        </div>
+        <p style="font-size:13px;line-height:1.8;color:#555;">그린 계열의 다양한 톤과 질감을 탐구한 사진 아카이브. 숲과 자연에서 채집한 초록빛 레퍼런스 컬렉션입니다.</p>`
+    },
+    illust: {
+      tag: 'Illustration · 2024',
+      title: 'Character Study',
+      body: `
+        <div style="background:#e0dbd0;border-radius:12px;padding:24px;margin-bottom:20px;display:flex;justify-content:center;">
+          <svg viewBox="0 0 200 160" style="width:100%;max-width:300px;">
+            <rect width="200" height="160" fill="#e0dbd0" rx="8"/>
+            <!-- Simple character figures like in OHi PDF -->
+            <circle cx="50" cy="50" r="14" fill="none" stroke="#1a1a1a" stroke-width="2"/>
+            <line x1="50" y1="64" x2="44" y2="88" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="50" y1="64" x2="56" y2="88" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="44" y1="76" x2="36" y2="70" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="56" y1="76" x2="64" y2="70" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="110" cy="45" r="12" fill="none" stroke="#1a1a1a" stroke-width="2"/>
+            <line x1="110" y1="57" x2="104" y2="80" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="110" y1="57" x2="116" y2="80" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="165" cy="55" r="13" fill="none" stroke="#1a1a1a" stroke-width="2"/>
+            <line x1="165" y1="68" x2="159" y2="92" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="165" y1="68" x2="171" y2="92" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <p style="font-size:13px;line-height:1.8;color:#555;">브랜드 아이덴티티에 활용할 캐릭터 일러스트레이션 스터디. 선과 형태의 단순화를 통해 브랜드 개성을 담아냈습니다.</p>`
+    },
+    interview: {
+      tag: 'Research · Aug 2019',
+      title: 'Interview Notes',
+      body: `
+        <div style="background:#eae8e2;border-radius:12px;padding:24px;margin-bottom:20px;font-family:monospace;">
+          <p style="font-size:11px;color:#888;margin-bottom:12px;">Interview_Aug-19.rtf</p>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <p style="font-size:12px;color:#444;line-height:1.7;">Q. 브랜드에서 가장 중요한 것은 무엇인가요?</p>
+            <p style="font-size:12px;color:#666;line-height:1.7;padding-left:12px;border-left:2px solid #c9b99a;">"일관성입니다. 어떤 터치포인트에서도 같은 감성이 느껴져야 해요."</p>
+            <p style="font-size:12px;color:#444;line-height:1.7;margin-top:8px;">Q. 디자인 프로세스에서 가장 어려운 점은?</p>
+            <p style="font-size:12px;color:#666;line-height:1.7;padding-left:12px;border-left:2px solid #c9b99a;">"클라이언트의 비전과 사용자의 니즈 사이의 균형을 찾는 것이요."</p>
+          </div>
+        </div>
+        <p style="font-size:13px;line-height:1.8;color:#555;">디자이너 및 브랜드 매니저 인터뷰 기록. 현업에서의 인사이트를 수집하고 브랜드 전략에 반영하기 위한 리서치입니다.</p>`
+    }
+  };
+
+  function openArchive(id) {
+    const item = archiveData[id];
+    if (!item) return;
+    document.getElementById('archiveTag').textContent = item.tag;
+    document.getElementById('archiveTitle').textContent = item.title;
+    document.getElementById('archiveBody').innerHTML = item.body;
+    document.getElementById('archivePanel').style.transform = 'translateX(0)';
+    document.getElementById('archiveOverlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeArchive() {
+    document.getElementById('archivePanel').style.transform = 'translateX(100%)';
+    document.getElementById('archiveOverlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // ── PROJECT PANEL ──
+  const projects = {
+    willog: {
+      tag: 'BX Design · 2024',
+      title: 'Willog',
+      meta: [
+        { label: 'Role', value: 'Brand Designer' },
+        { label: 'Year', value: '2024' },
+        { label: 'Type', value: 'BX Design' },
+      ],
+      overview: 'Willog은 일상의 기록을 돕는 플랫폼으로, 브랜드 경험 전반을 디자인했습니다. 심플하고 모던한 블랙 패키지로 프리미엄 감성을 전달하는 것이 핵심 목표였습니다.',
+      process: '브랜드 아이덴티티 수립부터 패키지 디자인, 디지털 에셋까지 일관된 브랜드 경험을 구축했습니다. 블랙과 화이트의 강한 대비를 통해 브랜드의 신뢰감과 심플함을 표현했습니다.',
+      bgColor: '#111',
+      svgContent: `<svg viewBox="0 0 520 300" xmlns="http://www.w3.org/2000/svg">
+        <rect width="520" height="300" fill="#111"/>
+        <rect x="140" y="40" width="180" height="220" rx="6" fill="#1a1a1a" stroke="#333" stroke-width="1"/>
+        <path d="M140 40 L190 15 L380 15 L320 40 Z" fill="#2a2a2a"/>
+        <path d="M320 40 L380 15 L380 210 L320 230 Z" fill="#222"/>
+        <text x="168" y="158" font-family="Georgia, serif" font-size="14" fill="#fff" opacity="0.4">✦</text>
+        <text x="188" y="160" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#fff" letter-spacing="2">willog</text>
+        <line x1="155" y1="200" x2="305" y2="200" stroke="#333" stroke-width="1"/>
+        <rect x="340" y="60" width="120" height="160" rx="4" fill="#1a1a1a" stroke="#2a2a2a" stroke-width="1"/>
+        <text x="362" y="148" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#fff" letter-spacing="1">willog</text>
+        <text x="355" y="165" font-family="Arial, sans-serif" font-size="8" fill="#888">BRAND IDENTITY</text>
+      </svg>`
+    },
+    ohi: {
+      tag: 'Brand Identity · 2026',
+      title: 'OHi',
+      meta: [
+        { label: 'Role', value: 'Brand Designer' },
+        { label: 'Year', value: '2026' },
+        { label: 'Type', value: 'Brand Identity' },
+      ],
+      overview: 'OHi는 사람과 사람을 연결하는 커뮤니티 플랫폼의 브랜드 아이덴티티 프로젝트입니다. 따뜻하고 친근한 일러스트 스타일을 통해 브랜드 개성을 표현했습니다.',
+      process: '다양한 캐릭터 일러스트를 활용한 패턴 시스템을 구축했습니다. 로고, 컬러 팔레트, 타이포그래피, 모션 가이드라인까지 브랜드 전반의 시각 언어를 정의했습니다.',
+      bgColor: '#f5f0e8',
+      svgContent: `<svg viewBox="0 0 520 300" xmlns="http://www.w3.org/2000/svg">
+        <rect width="520" height="300" fill="#f5f0e8"/>
+        <rect x="100" y="30" width="200" height="240" rx="10" fill="#fff" stroke="#e0dbd0" stroke-width="1.5"/>
+        <circle cx="150" cy="90" r="18" fill="none" stroke="#1a1a1a" stroke-width="2"/>
+        <circle cx="150" cy="80" r="8" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+        <line x1="150" y1="108" x2="144" y2="130" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="150" y1="108" x2="156" y2="130" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round"/>
+        <circle cx="200" cy="78" r="15" fill="none" stroke="#1a1a1a" stroke-width="2"/>
+        <line x1="200" y1="93" x2="193" y2="115" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="200" y1="93" x2="207" y2="115" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="193" y1="104" x2="183" y2="98" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="207" y1="104" x2="217" y2="98" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round"/>
+        <circle cx="255" cy="95" r="16" fill="none" stroke="#1a1a1a" stroke-width="2"/>
+        <line x1="255" y1="111" x2="249" y2="133" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="255" y1="111" x2="261" y2="133" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round"/>
+        <text x="128" y="175" font-family="Arial, sans-serif" font-size="16" font-weight="800" fill="#1a1a1a" letter-spacing="3">OHi</text>
+        <rect x="330" y="50" width="150" height="90" rx="8" fill="#1a1a1a"/>
+        <text x="358" y="102" font-family="Arial, sans-serif" font-size="20" font-weight="800" fill="#fff" letter-spacing="3">OHi</text>
+        <rect x="330" y="160" width="70" height="70" rx="8" fill="#f5f0e8" stroke="#1a1a1a" stroke-width="2"/>
+        <text x="348" y="200" font-family="Arial, sans-serif" font-size="13" font-weight="800" fill="#1a1a1a">OHi</text>
+        <rect x="410" y="160" width="70" height="70" rx="8" fill="#1a1a1a"/>
+        <text x="428" y="200" font-family="Arial, sans-serif" font-size="13" font-weight="800" fill="#fff">OHi</text>
+      </svg>`
+    },
+    soun: {
+      tag: 'Editorial Design · 2023',
+      title: '소운탕',
+      meta: [
+        { label: 'Role', value: 'Editorial Designer' },
+        { label: 'Year', value: '2023' },
+        { label: 'Type', value: 'Editorial Design' },
+      ],
+      overview: '소운탕은 로컬 식문화를 기록하는 에디토리얼 프로젝트입니다. 한국 전통의 따뜻함을 현대적인 편집 디자인 언어로 풀어냈습니다.',
+      process: '타이포그래피 중심의 레이아웃 시스템을 구축하고, 붉은 포인트 컬러를 활용해 강렬한 인상을 주는 출판물을 제작했습니다. 여백과 텍스트의 리듬감이 핵심이었습니다.',
+      bgColor: '#fafaf8',
+      svgContent: `<svg viewBox="0 0 520 300" xmlns="http://www.w3.org/2000/svg">
+        <rect width="520" height="300" fill="#f5f3ee"/>
+        <rect x="80" y="25" width="200" height="250" rx="4" fill="#fafaf8" stroke="#ddd" stroke-width="1.5"/>
+        <rect x="80" y="25" width="10" height="250" rx="2" fill="#e8e4dc"/>
+        <rect x="238" y="35" width="20" height="30" rx="2" fill="#c0392b"/>
+        <text x="105" y="95" font-family="serif" font-size="24" font-weight="700" fill="#1a1a1a">소운탕</text>
+        <line x1="96" y1="110" x2="270" y2="110" stroke="#ddd" stroke-width="1"/>
+        <line x1="96" y1="125" x2="255" y2="125" stroke="#ccc" stroke-width="1"/>
+        <line x1="96" y1="137" x2="260" y2="137" stroke="#ccc" stroke-width="1"/>
+        <line x1="96" y1="149" x2="245" y2="149" stroke="#ccc" stroke-width="1"/>
+        <line x1="96" y1="161" x2="265" y2="161" stroke="#ccc" stroke-width="1"/>
+        <rect x="96" y="235" width="40" height="16" rx="2" fill="#1a1a1a"/>
+        <text x="102" y="247" font-family="sans-serif" font-size="8" fill="#fff">EDITION</text>
+        <rect x="310" y="40" width="170" height="110" rx="4" fill="#fafaf8" stroke="#ddd" stroke-width="1"/>
+        <rect x="310" y="40" width="7" height="110" rx="2" fill="#e8e4dc"/>
+        <text x="328" y="85" font-family="serif" font-size="14" font-weight="700" fill="#1a1a1a">소운탕</text>
+        <rect x="448" y="48" width="10" height="16" rx="1" fill="#c0392b"/>
+        <rect x="310" y="170" width="80" height="110" rx="4" fill="#fafaf8" stroke="#ddd" stroke-width="1"/>
+        <rect x="310" y="170" width="5" height="110" rx="2" fill="#e8e4dc"/>
+        <text x="322" y="230" font-family="serif" font-size="10" font-weight="700" fill="#1a1a1a">소운탕</text>
+        <rect x="400" y="170" width="80" height="110" rx="4" fill="#1a1a1a"/>
+        <text x="412" y="230" font-family="serif" font-size="10" font-weight="700" fill="#fff">소운탕</text>
+        <rect x="412" y="178" width="8" height="12" rx="1" fill="#c0392b"/>
+      </svg>`
+    }
+  };
+
+  function openPanel(id) {
+    const p = projects[id];
+    if (!p) return;
+
+    document.getElementById('panelContent').innerHTML = `
+      <p class="panel-tag">${p.tag}</p>
+      <h2 class="panel-title">${p.title}</h2>
+      <div class="panel-img" style="background:${p.bgColor}">
+        ${p.svgContent}
+      </div>
+      <div class="panel-meta">
+        ${p.meta.map(m => `
+          <div class="panel-meta-item">
+            <span class="panel-meta-label">${m.label}</span>
+            <span class="panel-meta-value">${m.value}</span>
+          </div>
+        `).join('')}
+      </div>
+      <div class="panel-section">
+        <h4>Overview</h4>
+        <p>${p.overview}</p>
+      </div>
+      <div class="panel-section">
+        <h4>Process</h4>
+        <p>${p.process}</p>
+      </div>
+    `;
+
+    document.getElementById('projectPanel').classList.add('open');
+    document.getElementById('panelOverlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closePanel() {
+    document.getElementById('projectPanel').classList.remove('open');
+    document.getElementById('panelOverlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // Close panel with ESC key
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      closePanel();
+      closeModal();
+    }
+  });
+
+
+  function openModal() {
+    document.getElementById('contactModal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal() {
+    document.getElementById('contactModal').classList.remove('open');
+    document.body.style.overflow = '';
+    // reset form after closing
+    setTimeout(() => {
+      document.getElementById('formContent').style.display = 'block';
+      document.getElementById('formSuccess').style.display = 'none';
+      document.getElementById('contactForm').reset();
+    }, 300);
+  }
+
+  // Close when clicking outside modal
+  document.getElementById('contactModal').addEventListener('click', function(e) {
+    if (e.target === this) closeModal();
+  });
+
+  // Form submit — sends via Formspree
+  document.getElementById('contactForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = this.querySelector('.btn-submit');
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+
+    const data = {
+      name: document.getElementById('name').value,
+      email: document.getElementById('email').value,
+      message: document.getElementById('message').value,
+    };
+
+    try {
+      const res = await fetch('https://formspree.io/f/xaqgbqnz', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(data)
+      });
+
+      if (res.ok) {
+        document.getElementById('formContent').style.display = 'none';
+        document.getElementById('formSuccess').style.display = 'block';
+      } else {
+        // Fallback: open mail client
+        window.location.href = `mailto:osg497@gmail.com?subject=Portfolio Contact from ${encodeURIComponent(data.name)}&body=${encodeURIComponent(data.message + '\n\nFrom: ' + data.email)}`;
+      }
+    } catch {
+      // Fallback: open mail client
+      window.location.href = `mailto:osg497@gmail.com?subject=Portfolio Contact from ${encodeURIComponent(data.name)}&body=${encodeURIComponent(data.message + '\n\nFrom: ' + data.email)}`;
+    }
+  });
+</script>
+
+</body>
+</html>
