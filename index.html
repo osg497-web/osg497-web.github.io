@@ -1396,6 +1396,8 @@
             <img src="asif-1.png" style="width:100%;border-radius:6px;display:block;"/>
             <img src="asif-2.png" style="width:100%;border-radius:6px;display:block;"/>
             <img src="asif-3.png" style="width:100%;border-radius:6px;display:block;"/>
+            <img src="asif-4.png" style="width:100%;border-radius:6px;display:block;" onerror="this.outerHTML='<div style=&quot;width:100%;aspect-ratio:16/10;border-radius:6px;background:#eee;border:1px dashed #ccc;display:flex;align-items:center;justify-content:center;font-size:12px;color:#999;&quot;>asif-4.png 추가 예정</div>'"/>
+            <img src="asif-5.png" style="width:100%;border-radius:6px;display:block;" onerror="this.outerHTML='<div style=&quot;width:100%;aspect-ratio:16/10;border-radius:6px;background:#eee;border:1px dashed #ccc;display:flex;align-items:center;justify-content:center;font-size:12px;color:#999;&quot;>asif-5.png 추가 예정</div>'"/>
           </div>
         </div>
         <div>
@@ -1410,6 +1412,8 @@
             <img src="tobe-1.png" style="width:100%;border-radius:6px;display:block;"/>
             <img src="tobe-2.png" style="width:100%;border-radius:6px;display:block;"/>
             <img src="tobe-3.png" style="width:100%;border-radius:6px;display:block;"/>
+            <img src="tobe-4.png" style="width:100%;border-radius:6px;display:block;" onerror="this.outerHTML='<div style=&quot;width:100%;aspect-ratio:16/10;border-radius:6px;background:#eee;border:1px dashed #ccc;display:flex;align-items:center;justify-content:center;font-size:12px;color:#999;&quot;>tobe-4.png 추가 예정</div>'"/>
+            <img src="tobe-5.png" style="width:100%;border-radius:6px;display:block;" onerror="this.outerHTML='<div style=&quot;width:100%;aspect-ratio:16/10;border-radius:6px;background:#eee;border:1px dashed #ccc;display:flex;align-items:center;justify-content:center;font-size:12px;color:#999;&quot;>tobe-5.png 추가 예정</div>'"/>
           </div>
         </div>
       </div>
@@ -1422,20 +1426,6 @@
         <img src="extra-2.png" style="width:100%;border-radius:8px;display:block;"/>
         <img src="extra-3.png" style="width:100%;border-radius:8px;display:block;"/>
         <img src="extra-4.png" style="width:100%;border-radius:8px;display:block;"/>
-      </div>
-    </div>
-
-    <!-- BX BRAND GUIDE -->
-    <div style="border-top:1px solid #e0ddd8;padding-top:48px;margin-bottom:80px;">
-      <p style="font-size:14px;font-weight:600;color:#1a1a1a;margin-bottom:24px;">Brand Guide</p>
-      <div style="display:flex;flex-direction:column;gap:24px;">
-        <img src="bx-268.png" style="width:100%;border-radius:8px;display:block;"/>
-        <img src="bx-269.png" style="width:100%;border-radius:8px;display:block;"/>
-        <img src="bx-270.png" style="width:100%;border-radius:8px;display:block;"/>
-        <img src="bx-271.png" style="width:100%;border-radius:8px;display:block;"/>
-        <img src="bx-272.png" style="width:100%;border-radius:8px;display:block;"/>
-        <img src="bx-273.png" style="width:100%;border-radius:8px;display:block;"/>
-        <img src="bx-274.png" style="width:100%;border-radius:8px;display:block;"/>
       </div>
     </div>
 
@@ -1517,6 +1507,7 @@
 
   function goHome() {
     closeOhi(); closeWillog(); closeSountang();
+    if (location.hash) history.replaceState(null, '', location.pathname);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
@@ -1524,31 +1515,46 @@
     document.getElementById('ohiPage').style.display = 'block';
     document.getElementById('ohiPage').scrollTop = 0;
     document.body.style.overflow = 'hidden';
+    history.replaceState(null, '', '#ohi');
   }
   function closeOhi() {
     document.getElementById('ohiPage').style.display = 'none';
     document.body.style.overflow = '';
+    if (location.hash === '#ohi') history.replaceState(null, '', location.pathname);
   }
 
   function openWillog() {
     document.getElementById('willogPage').style.display = 'block';
     document.getElementById('willogPage').scrollTop = 0;
     document.body.style.overflow = 'hidden';
+    history.replaceState(null, '', '#willog');
   }
   function closeWillog() {
     document.getElementById('willogPage').style.display = 'none';
     document.body.style.overflow = '';
+    if (location.hash === '#willog') history.replaceState(null, '', location.pathname);
   }
 
   function openSountang() {
     document.getElementById('sountangPage').style.display = 'block';
     document.getElementById('sountangPage').scrollTop = 0;
     document.body.style.overflow = 'hidden';
+    history.replaceState(null, '', '#sountang');
   }
   function closeSountang() {
     document.getElementById('sountangPage').style.display = 'none';
     document.body.style.overflow = '';
+    if (location.hash === '#sountang') history.replaceState(null, '', location.pathname);
   }
+
+  // 새로고침했을 때 주소창의 # 부분을 보고 어떤 페이지를 열어야 할지 기억해서 다시 열어줌
+  function restorePageFromHash() {
+    const hash = location.hash.replace('#', '');
+    if (hash === 'willog') openWillog();
+    else if (hash === 'ohi') openOhi();
+    else if (hash === 'sountang') openSountang();
+  }
+  window.addEventListener('DOMContentLoaded', restorePageFromHash);
 
   // ── ARCHIVE MODAL ──
   const archiveData = {
