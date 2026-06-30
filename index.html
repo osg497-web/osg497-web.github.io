@@ -703,14 +703,14 @@
       <h2 class="section-title">Archive</h2>
       <p class="section-sub">A collection of references, inspirations, and past works.</p>
     </div>
-    <div style="display:flex;gap:8px;">
-      <button onclick="slideArchive(-1)" style="background:none;border:1px solid #ddd;border-radius:50%;width:36px;height:36px;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;">←</button>
-      <button onclick="slideArchive(1)" style="background:none;border:1px solid #ddd;border-radius:50%;width:36px;height:36px;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;">→</button>
-    </div>
   </div>
 
-  <div style="overflow:hidden;">
-    <div id="archiveSlider" style="display:grid;grid-template-columns:repeat(12,calc(25% - 12px));gap:16px;transition:transform 0.4s ease;">
+  <div style="position:relative;">
+    <button onclick="slideArchive(-1)" style="position:absolute;left:-18px;top:50%;transform:translateY(-50%);z-index:5;background:#fff;border:1px solid #ddd;border-radius:50%;width:36px;height:36px;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,0.08);">←</button>
+    <button onclick="slideArchive(1)" style="position:absolute;right:-18px;top:50%;transform:translateY(-50%);z-index:5;background:#fff;border:1px solid #ddd;border-radius:50%;width:36px;height:36px;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,0.08);">→</button>
+
+    <div style="overflow:hidden;">
+      <div id="archiveSlider" style="display:grid;grid-template-columns:repeat(12,calc(25% - 12px));gap:16px;transition:transform 0.4s ease;">
       <div class="archive-item" onclick="openArchive('folder')" style="cursor:pointer;background:#ffffff;padding:12px;"><img src="research.png" style="width:100%;height:100%;object-fit:contain;"/></div>
       <div class="archive-item" onclick="openArchive('illust')" style="cursor:pointer;background:#ffffff;padding:16px;"><img src="illust.png" style="width:100%;height:100%;object-fit:contain;"/></div>
       <div class="archive-item" onclick="openArchive('seasons')" style="cursor:pointer;background:#ffffff;padding:12px;"><img src="publication.png" style="width:100%;height:100%;object-fit:contain;"/></div>
