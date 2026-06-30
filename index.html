@@ -192,10 +192,16 @@
     }
 
     .work-card-img img {
-      width: 26%;
-      height: 34%;
+      width: 18.2%;
+      height: 23.8%;
       object-fit: contain;
       object-position: center center;
+      transition: width 0.3s ease, height 0.3s ease;
+    }
+
+    .work-card:hover .work-card-img img {
+      width: 26%;
+      height: 34%;
     }
 
     .work-card-name {
