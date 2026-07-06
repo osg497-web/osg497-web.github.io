@@ -715,25 +715,30 @@
     </div>
   </div>
 
-  <div style="position:relative;">
-    <button onclick="slideArchive(-1)" style="position:absolute;left:-18px;top:50%;transform:translateY(-50%);z-index:5;background:#fff;border:1px solid #ddd;border-radius:50%;width:36px;height:36px;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,0.08);">←</button>
-    <button onclick="slideArchive(1)" style="position:absolute;right:-18px;top:50%;transform:translateY(-50%);z-index:5;background:#fff;border:1px solid #ddd;border-radius:50%;width:36px;height:36px;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,0.08);">→</button>
+  <div style="position:relative;height:620px;">
+    <div class="archive-item" onclick="openArchive('folder')" style="position:absolute;left:2%;top:8%;width:180px;height:180px;transform:rotate(-6deg);cursor:pointer;background:#ffffff;padding:16px;box-shadow:0 8px 24px rgba(0,0,0,0.08);"><img src="research.png" style="width:100%;height:100%;object-fit:contain;"/></div>
 
-    <div style="overflow:hidden;">
-      <div id="archiveSlider" style="display:grid;grid-template-columns:repeat(12,calc(25% - 12px));gap:16px;transition:transform 0.4s ease;">
-      <div class="archive-item" onclick="openArchive('folder')" style="cursor:pointer;background:#ffffff;padding:12px;"><img src="research.png" style="width:100%;height:100%;object-fit:contain;"/></div>
-      <div class="archive-item" onclick="openArchive('illust')" style="cursor:pointer;background:#ffffff;padding:16px;"><img src="illust.png" style="width:100%;height:100%;object-fit:contain;"/></div>
-      <div class="archive-item" onclick="openArchive('seasons')" style="cursor:pointer;background:#ffffff;padding:12px;"><img src="publication.png" style="width:100%;height:100%;object-fit:contain;"/></div>
-      <div class="archive-item" onclick="openArchive('gesture')" style="cursor:pointer;background:#ffffff;padding:16px;"><img src="video.png" style="width:100%;height:100%;object-fit:contain;"/></div>
-      <div class="archive-item" onclick="openArchive('illust')" style="cursor:pointer;background:#ffffff;padding:16px;"><img src="illust.png" style="width:100%;height:100%;object-fit:contain;"/></div>
-      <div class="archive-item" onclick="openArchive('interview')" style="cursor:pointer;background:#ffffff;padding:12px;"><img src="video.png" style="width:100%;height:100%;object-fit:contain;"/></div>
-      <div class="archive-item" onclick="openArchive('texture')" style="cursor:pointer;background:#ffffff;padding:16px;"><img src="research.png" style="width:100%;height:100%;object-fit:contain;"/></div>
-      <div class="archive-item" onclick="openArchive('tomvagee')" style="cursor:pointer;background:#ffffff;padding:12px;"><img src="publication.png" style="width:100%;height:100%;object-fit:contain;"/></div>
-      <div class="archive-item" onclick="openArchive('gesture')" style="cursor:pointer;background:#ffffff;padding:12px;"><img src="video.png" style="width:100%;height:100%;object-fit:contain;"/></div>
-      <div class="archive-item" onclick="openArchive('nature')" style="cursor:pointer;background:#ffffff;padding:16px;"><img src="research.png" style="width:100%;height:100%;object-fit:contain;"/></div>
-      <div class="archive-item" onclick="openArchive('moss')" style="cursor:pointer;background:#ffffff;padding:12px;"><img src="illust.png" style="width:100%;height:100%;object-fit:contain;"/></div>
-      <div class="archive-item" onclick="openArchive('mossgreen')" style="cursor:pointer;background:#ffffff;padding:16px;"><img src="publication.png" style="width:100%;height:100%;object-fit:contain;"/></div>
-    </div>
+    <div class="archive-item" onclick="openArchive('illust')" style="position:absolute;left:20%;top:38%;width:150px;height:150px;transform:rotate(4deg);cursor:pointer;background:#ffffff;padding:18px;box-shadow:0 8px 24px rgba(0,0,0,0.08);"><img src="illust.png" style="width:100%;height:100%;object-fit:contain;"/></div>
+
+    <div class="archive-item" onclick="openArchive('seasons')" style="position:absolute;left:36%;top:4%;width:160px;height:160px;transform:rotate(3deg);cursor:pointer;background:#ffffff;padding:14px;box-shadow:0 8px 24px rgba(0,0,0,0.08);"><img src="publication.png" style="width:100%;height:100%;object-fit:contain;"/></div>
+
+    <div class="archive-item" onclick="openArchive('gesture')" style="position:absolute;left:52%;top:34%;width:170px;height:170px;transform:rotate(-4deg);cursor:pointer;background:#ffffff;padding:16px;box-shadow:0 8px 24px rgba(0,0,0,0.08);"><img src="video.png" style="width:100%;height:100%;object-fit:contain;"/></div>
+
+    <div class="archive-item" onclick="openArchive('illust')" style="position:absolute;left:70%;top:2%;width:140px;height:140px;transform:rotate(-8deg);cursor:pointer;background:#ffffff;padding:16px;box-shadow:0 8px 24px rgba(0,0,0,0.08);"><img src="illust.png" style="width:100%;height:100%;object-fit:contain;"/></div>
+
+    <div class="archive-item" onclick="openArchive('interview')" style="position:absolute;left:80%;top:38%;width:160px;height:160px;transform:rotate(6deg);cursor:pointer;background:#ffffff;padding:14px;box-shadow:0 8px 24px rgba(0,0,0,0.08);"><img src="video.png" style="width:100%;height:100%;object-fit:contain;"/></div>
+
+    <div class="archive-item" onclick="openArchive('texture')" style="position:absolute;left:4%;top:66%;width:150px;height:150px;transform:rotate(5deg);cursor:pointer;background:#ffffff;padding:18px;box-shadow:0 8px 24px rgba(0,0,0,0.08);"><img src="research.png" style="width:100%;height:100%;object-fit:contain;"/></div>
+
+    <div class="archive-item" onclick="openArchive('tomvagee')" style="position:absolute;left:24%;top:70%;width:130px;height:130px;transform:rotate(-3deg);cursor:pointer;background:#ffffff;padding:12px;box-shadow:0 8px 24px rgba(0,0,0,0.08);"><img src="publication.png" style="width:100%;height:100%;object-fit:contain;"/></div>
+
+    <div class="archive-item" onclick="openArchive('gesture')" style="position:absolute;left:42%;top:64%;width:170px;height:170px;transform:rotate(2deg);cursor:pointer;background:#ffffff;padding:16px;box-shadow:0 8px 24px rgba(0,0,0,0.08);"><img src="video.png" style="width:100%;height:100%;object-fit:contain;"/></div>
+
+    <div class="archive-item" onclick="openArchive('nature')" style="position:absolute;left:62%;top:68%;width:145px;height:145px;transform:rotate(-5deg);cursor:pointer;background:#ffffff;padding:16px;box-shadow:0 8px 24px rgba(0,0,0,0.08);"><img src="research.png" style="width:100%;height:100%;object-fit:contain;"/></div>
+
+    <div class="archive-item" onclick="openArchive('moss')" style="position:absolute;left:78%;top:70%;width:135px;height:135px;transform:rotate(7deg);cursor:pointer;background:#ffffff;padding:14px;box-shadow:0 8px 24px rgba(0,0,0,0.08);"><img src="illust.png" style="width:100%;height:100%;object-fit:contain;"/></div>
+
+    <div class="archive-item" onclick="openArchive('mossgreen')" style="position:absolute;left:90%;top:22%;width:130px;height:130px;transform:rotate(-2deg);cursor:pointer;background:#ffffff;padding:14px;box-shadow:0 8px 24px rgba(0,0,0,0.08);"><img src="publication.png" style="width:100%;height:100%;object-fit:contain;"/></div>
   </div>
 
 </section>
@@ -853,7 +858,7 @@
 
   <!-- NAV -->
   <div style="position:sticky;top:0;z-index:10;background:#ffffff;border-bottom:1px solid #e0ddd8;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:56px;">
-    <button onclick="closeSountang()" style="background:none;border:none;cursor:pointer;font-size:15px;color:#888;display:flex;align-items:center;gap:8px;font-family:inherit;">← Back</button>
+    <button onclick="closeSountang()" style="background:none;border:none;cursor:pointer;font-size:14px;color:#888;display:flex;align-items:center;gap:8px;font-family:inherit;">← Back</button>
     <span onclick="closeSountang();goHome();" style="font-family:'Passero One',Georgia,serif;font-size:21px;font-weight:400;letter-spacing:0.02em;cursor:pointer;">Saekyoung</span>
     <div style="width:60px;"></div>
   </div>
@@ -865,11 +870,11 @@
       <p style="font-size:13px;text-transform:uppercase;letter-spacing:0.1em;color:#888;margin-bottom:32px;">Public Bathhouse Brand</p>
       <img src="images/img-001.png" alt="소운탕 로고" style="height:39px;width:auto;margin-bottom:40px;display:block;"/>
       <div style="display:flex;gap:48px;padding:28px 0;border-top:1px solid #e0ddd8;border-bottom:1px solid #e0ddd8;margin-bottom:56px;flex-wrap:wrap;">
-        <div style="display:flex;flex-direction:column;gap:4px;"><span style="font-size:12px;text-transform:uppercase;letter-spacing:0.08em;color:#888;">Role</span><span style="font-size:15px;font-weight:500;">Brand Designer</span></div>
-        <div style="display:flex;flex-direction:column;gap:4px;"><span style="font-size:12px;text-transform:uppercase;letter-spacing:0.08em;color:#888;">Year</span><span style="font-size:15px;font-weight:500;">2026.04 - 05</span></div>
-        <div style="display:flex;flex-direction:column;gap:4px;"><span style="font-size:12px;text-transform:uppercase;letter-spacing:0.08em;color:#888;">Type</span><span style="font-size:15px;font-weight:500;">Brand Identity, Product</span></div>
-        <div style="display:flex;flex-direction:column;gap:4px;"><span style="font-size:12px;text-transform:uppercase;letter-spacing:0.08em;color:#888;">Tools</span><span style="font-size:15px;font-weight:500;">Figma, Chat GPT, Higgsfield, Photoshop</span></div>
-        <div style="display:flex;flex-direction:column;gap:4px;"><span style="font-size:12px;text-transform:uppercase;letter-spacing:0.08em;color:#888;">Contribution</span><span style="font-size:15px;font-weight:500;">100%</span></div>
+        <div style="display:flex;flex-direction:column;gap:4px;"><span style="font-size:12px;text-transform:uppercase;letter-spacing:0.08em;color:#888;">Role</span><span style="font-size:14px;font-weight:500;">Brand Designer</span></div>
+        <div style="display:flex;flex-direction:column;gap:4px;"><span style="font-size:12px;text-transform:uppercase;letter-spacing:0.08em;color:#888;">Year</span><span style="font-size:14px;font-weight:500;">2026.04 - 05</span></div>
+        <div style="display:flex;flex-direction:column;gap:4px;"><span style="font-size:12px;text-transform:uppercase;letter-spacing:0.08em;color:#888;">Type</span><span style="font-size:14px;font-weight:500;">Brand Identity, Product</span></div>
+        <div style="display:flex;flex-direction:column;gap:4px;"><span style="font-size:12px;text-transform:uppercase;letter-spacing:0.08em;color:#888;">Tools</span><span style="font-size:14px;font-weight:500;">Figma, Chat GPT, Higgsfield, Photoshop</span></div>
+        <div style="display:flex;flex-direction:column;gap:4px;"><span style="font-size:12px;text-transform:uppercase;letter-spacing:0.08em;color:#888;">Contribution</span><span style="font-size:14px;font-weight:500;">100%</span></div>
       </div>
     </div>
 
@@ -891,10 +896,10 @@
 
       <!-- Background -->
       <div style="display:grid;grid-template-columns:140px 1fr;gap:16px 32px;margin-bottom:90px;">
-        <div style="font-size:12px;text-transform:uppercase;letter-spacing:0.1em;color:#888;">Background</div>
+        <div style="font-size:15px;text-transform:uppercase;letter-spacing:0.1em;color:#888;">Background</div>
         <div>
-          <p style="font-size:13px;line-height:1.85;color:#444;max-width:680px;margin-bottom:14px;">현대인은 끊임없는 자극과 빠른 속도의 일상 속에서 살아갑니다. 바쁜 하루를 보내고도 충분히 쉬지 못한 채 다시 하루를 시작하는 일이 반복되며, 몸과 마음을 온전히 회복할 수 있는 시간은 점점 부족해지고 있습니다.</p>
-          <p style="font-size:13px;line-height:1.85;color:#444;max-width:680px;">소운탕은 이러한 일상 속에서 누구나 부담 없이 찾아와 잠시 멈추고, 몸과 마음의 긴장을 내려놓을 수 있는 휴식의 공간을 만들고자 했습니다.</p>
+          <p style="font-size:15px;line-height:1.85;color:#444;max-width:680px;margin-bottom:14px;">현대인은 끊임없는 자극과 빠른 속도의 일상 속에서 살아갑니다. 바쁜 하루를 보내고도 충분히 쉬지 못한 채 다시 하루를 시작하는 일이 반복되며, 몸과 마음을 온전히 회복할 수 있는 시간은 점점 부족해지고 있습니다.</p>
+          <p style="font-size:15px;line-height:1.85;color:#444;max-width:680px;">소운탕은 이러한 일상 속에서 누구나 부담 없이 찾아와 잠시 멈추고, 몸과 마음의 긴장을 내려놓을 수 있는 휴식의 공간을 만들고자 했습니다.</p>
         </div>
       </div>
 
@@ -1100,12 +1105,12 @@
         </div>
         <div>
           <p style="font-size:13px;color:#888;margin-bottom:2px;">Bodyline (English)</p>
-          <p style="font-size:12px;color:#aaa;margin-bottom:10px;">Regular</p>
+          <p style="font-size:13px;color:#aaa;margin-bottom:10px;">Regular</p>
           <p style="font-size:27px;color:#1a1a1a;">Pretendard</p>
         </div>
         <div>
           <p style="font-size:13px;color:#888;margin-bottom:2px;">Bodyline (Korean)</p>
-          <p style="font-size:12px;color:#aaa;margin-bottom:10px;">Regular</p>
+          <p style="font-size:13px;color:#aaa;margin-bottom:10px;">Regular</p>
           <p style="font-size:27px;color:#1a1a1a;">프레텐다드</p>
         </div>
       </div>
@@ -1120,37 +1125,37 @@
           <div style="background:#fff;border:1px solid #e0ddd8;border-radius:12px;aspect-ratio:1;display:flex;align-items:center;justify-content:center;padding:16px;margin-bottom:10px;">
             <img src="images/img-009.png" alt="여자화장실" style="max-width:70%;max-height:70%;object-fit:contain;"/>
           </div>
-          <span style="font-size:12px;color:#666;">여자화장실</span>
+          <span style="font-size:13px;color:#666;">여자화장실</span>
         </div>
         <div style="text-align:center;">
           <div style="background:#fff;border:1px solid #e0ddd8;border-radius:12px;aspect-ratio:1;display:flex;align-items:center;justify-content:center;padding:16px;margin-bottom:10px;">
             <img src="images/img-010.png" alt="남자화장실" style="max-width:70%;max-height:70%;object-fit:contain;"/>
           </div>
-          <span style="font-size:12px;color:#666;">남자화장실</span>
+          <span style="font-size:13px;color:#666;">남자화장실</span>
         </div>
         <div style="text-align:center;">
           <div style="background:#fff;border:1px solid #e0ddd8;border-radius:12px;aspect-ratio:1;display:flex;align-items:center;justify-content:center;padding:16px;margin-bottom:10px;">
             <img src="images/img-011.png" alt="장애인 화장실" style="max-width:70%;max-height:70%;object-fit:contain;"/>
           </div>
-          <span style="font-size:12px;color:#666;">장애인 화장실</span>
+          <span style="font-size:13px;color:#666;">장애인 화장실</span>
         </div>
         <div style="text-align:center;">
           <div style="background:#fff;border:1px solid #e0ddd8;border-radius:12px;aspect-ratio:1;display:flex;align-items:center;justify-content:center;padding:16px;margin-bottom:10px;">
             <img src="images/img-012.png" alt="금연" style="max-width:70%;max-height:70%;object-fit:contain;"/>
           </div>
-          <span style="font-size:12px;color:#666;">금연</span>
+          <span style="font-size:13px;color:#666;">금연</span>
         </div>
         <div style="text-align:center;">
           <div style="background:#fff;border:1px solid #e0ddd8;border-radius:12px;aspect-ratio:1;display:flex;align-items:center;justify-content:center;padding:16px;margin-bottom:10px;">
             <img src="images/img-013.png" alt="음식물 금지" style="max-width:70%;max-height:70%;object-fit:contain;"/>
           </div>
-          <span style="font-size:12px;color:#666;">음식물 금지</span>
+          <span style="font-size:13px;color:#666;">음식물 금지</span>
         </div>
         <div style="text-align:center;">
           <div style="background:#fff;border:1px solid #e0ddd8;border-radius:12px;aspect-ratio:1;display:flex;align-items:center;justify-content:center;padding:16px;margin-bottom:10px;">
             <img src="images/img-014.png" alt="소화기" style="max-width:70%;max-height:70%;object-fit:contain;"/>
           </div>
-          <span style="font-size:12px;color:#666;">소화기</span>
+          <span style="font-size:13px;color:#666;">소화기</span>
         </div>
       </div>
       <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:16px;">
@@ -1158,19 +1163,19 @@
           <div style="background:#fff;border:1px solid #e0ddd8;border-radius:12px;aspect-ratio:1;display:flex;align-items:center;justify-content:center;padding:16px;margin-bottom:10px;">
             <img src="images/img-015.png" alt="소근소근" style="max-width:70%;max-height:70%;object-fit:contain;"/>
           </div>
-          <span style="font-size:12px;color:#666;">소근소근</span>
+          <span style="font-size:13px;color:#666;">소근소근</span>
         </div>
         <div style="text-align:center;">
           <div style="background:#fff;border:1px solid #e0ddd8;border-radius:12px;aspect-ratio:1;display:flex;align-items:center;justify-content:center;padding:16px;margin-bottom:10px;">
             <img src="images/img-016.png" alt="샤워 필수" style="max-width:70%;max-height:70%;object-fit:contain;"/>
           </div>
-          <span style="font-size:12px;color:#666;">샤워 필수</span>
+          <span style="font-size:13px;color:#666;">샤워 필수</span>
         </div>
         <div style="text-align:center;">
           <div style="background:#fff;border:1px solid #e0ddd8;border-radius:12px;aspect-ratio:1;display:flex;align-items:center;justify-content:center;padding:16px;margin-bottom:10px;">
             <img src="images/img-017.png" alt="촬영 금지" style="max-width:70%;max-height:70%;object-fit:contain;"/>
           </div>
-          <span style="font-size:12px;color:#666;">촬영 금지</span>
+          <span style="font-size:13px;color:#666;">촬영 금지</span>
         </div>
       </div>
     </div>
@@ -1300,7 +1305,7 @@
         <img src="images/img-037.jpg" alt="소운탕 상품권 / 입장권 카드" style="width:100%;display:block;border-radius:4px;"/>
       </div>
       <div style="background:#fff;border:1px solid #e0ddd8;border-radius:12px;padding:24px 28px;max-width:520px;">
-        <p style="font-size:14px;font-weight:600;color:#1a1a1a;margin-bottom:12px;">상품권 이용안내</p>
+        <p style="font-size:13px;font-weight:600;color:#1a1a1a;margin-bottom:12px;">상품권 이용안내</p>
         <ul style="margin:0;padding-left:16px;font-size:13px;line-height:2;color:#555;">
           <li>1인 1회 입장권으로 사용 가능합니다.</li>
           <li>사용 전 유효기간을 확인해주세요.</li>
@@ -1330,7 +1335,7 @@
     <!-- BACK BUTTON -->
 
     <div style="padding:40px 0 80px;border-top:1px solid #e0ddd8;display:flex;justify-content:space-between;">
-      <button onclick="closeSountang()" style="background:none;border:none;cursor:pointer;font-size:15px;color:#888;font-family:inherit;">← Back to Work</button>
+      <button onclick="closeSountang()" style="background:none;border:none;cursor:pointer;font-size:14px;color:#888;font-family:inherit;">← Back to Work</button>
     </div>
 
   </div>
