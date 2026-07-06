@@ -98,7 +98,15 @@
       height: 630px;
     }
 
-    /* SVG Illustration — designer juggling objects */
+    @keyframes floatY {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-14px); }
+    }
+    .float-item {
+      position: absolute;
+      animation: floatY 4s ease-in-out infinite;
+    }
+    .float-item img { width: 100%; height: 100%; object-fit: contain; display: block; }
     .hero h1 {
       font-family: 'Pretendard', var(--serif);
       font-size: clamp(32px, 5vw, 58px);
@@ -647,7 +655,13 @@
 
 <!-- HERO -->
 <div class="hero">
-  <img src="hero-illust.png" class="hero-illustration" alt="Saekyoung illustration" style="width:420px;height:420px;object-fit:contain;"/>
+  <div style="position:relative;width:500px;height:560px;margin:0 auto;">
+    <div class="float-item" style="left:0px;top:160px;width:170px;height:230px;animation-delay:0.2s;animation-duration:4.4s;"><img src="images/hero-monitor.png" alt=""/></div>
+    <div class="float-item" style="left:170px;top:60px;width:150px;height:126px;animation-delay:0.8s;animation-duration:3.6s;"><img src="images/hero-tablet.png" alt=""/></div>
+    <div class="float-item" style="left:310px;top:90px;width:90px;height:108px;animation-delay:1.4s;animation-duration:4s;"><img src="images/hero-pencup.png" alt=""/></div>
+    <div class="float-item" style="left:300px;top:160px;width:200px;height:149px;animation-delay:0.5s;animation-duration:4.8s;"><img src="images/hero-laptop.png" alt=""/></div>
+    <div style="position:absolute;left:110px;top:130px;width:280px;height:480px;z-index:2;"><img src="images/hero-person.png" alt="Saekyoung" style="width:100%;height:100%;object-fit:contain;display:block;"/></div>
+  </div>
 
 
   <h1>Hello! I'm Saekyoung,<br>I'm a Marketing & brand designer.</h1>
