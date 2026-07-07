@@ -625,16 +625,19 @@
       .nav-left, .nav-right { gap: 16px; }
       section { padding: 48px 20px; }
       .work-grid { grid-template-columns: 1fr; gap: 20px; }
-      .archive-grid { grid-template-columns: repeat(3, 1fr); }
       .about-inner { grid-template-columns: 1fr; gap: 32px; }
       footer { padding: 24px 20px; flex-direction: column; align-items: flex-start; }
       .footer-copy { text-align: left; }
+      .hero-illust-desktop { display: none; }
+      .hero-illust-mobile { display: flex !important; }
+      .archive-desktop { display: none; }
+      .archive-mobile { display: grid !important; }
     }
 
     @media (max-width: 480px) {
       .nav-center { font-size: 16px; }
       nav a { font-size: 12px; }
-      .archive-grid { grid-template-columns: repeat(2, 1fr); }
+      .archive-mobile { grid-template-columns: repeat(2,1fr) !important; gap: 10px !important; }
     }
   </style>
 </head>
@@ -655,7 +658,7 @@
 
 <!-- HERO -->
 <div class="hero">
-  <div style="position:relative;width:500px;height:560px;margin:0 auto;">
+  <div class="hero-illust-desktop" style="position:relative;width:500px;height:560px;margin:0 auto;">
     <div class="float-item" style="left:0px;top:160px;width:170px;height:230px;animation-delay:0.2s;animation-duration:4.4s;"><img src="images/hero-monitor.png" alt=""/></div>
     <div class="float-item" style="left:170px;top:60px;width:150px;height:126px;animation-delay:0.8s;animation-duration:3.6s;"><img src="images/hero-tablet.png" alt=""/></div>
     <div class="float-item" style="left:310px;top:90px;width:90px;height:108px;animation-delay:1.4s;animation-duration:4s;"><img src="images/hero-pencup.png" alt=""/></div>
@@ -663,10 +666,20 @@
     <div style="position:absolute;left:150px;top:190px;width:200px;height:340px;z-index:2;"><img src="images/hero-person.png" alt="Saekyoung" style="width:100%;height:100%;object-fit:contain;display:block;"/></div>
   </div>
 
+  <div class="hero-illust-mobile" style="display:none;flex-direction:column;align-items:center;">
+    <div style="width:170px;height:290px;margin-bottom:12px;"><img src="images/hero-person.png" alt="Saekyoung" style="width:100%;height:100%;object-fit:contain;display:block;"/></div>
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:14px;max-width:280px;">
+      <div class="float-item" style="position:relative;left:0;top:0;width:80px;height:108px;animation-delay:0.2s;animation-duration:4.4s;"><img src="images/hero-monitor.png" alt=""/></div>
+      <div class="float-item" style="position:relative;left:0;top:0;width:74px;height:62px;animation-delay:0.8s;animation-duration:3.6s;"><img src="images/hero-tablet.png" alt=""/></div>
+      <div class="float-item" style="position:relative;left:0;top:0;width:50px;height:60px;animation-delay:1.4s;animation-duration:4s;"><img src="images/hero-pencup.png" alt=""/></div>
+      <div class="float-item" style="position:relative;left:0;top:0;width:94px;height:70px;animation-delay:0.5s;animation-duration:4.8s;"><img src="images/hero-laptop.png" alt=""/></div>
+    </div>
+  </div>
 
   <h1>Hello! I'm Saekyoung,<br>I'm a Marketing & brand designer.</h1>
   <button onclick="openModal()" class="btn-contact">Contact me!</button>
 </div>
+
 
 <hr class="section-divider">
 
@@ -728,7 +741,7 @@
     </div>
   </div>
 
-  <div style="position:relative;height:620px;font-family:'Pretendard',sans-serif;">
+  <div class="archive-desktop" style="position:relative;height:620px;font-family:'Pretendard',sans-serif;">
     <div style="position:absolute;left:2%;top:2%;font-size:12px;color:#999;letter-spacing:0.05em;">01.</div>
     <div class="archive-item" onclick="openArchive('folder')" style="position:absolute;left:2%;top:8%;width:180px;height:180px;transform:rotate(-6deg);cursor:pointer;transition:transform 0.2s;" onmouseover="this.style.transform='rotate(-6deg) scale(1.08)'" onmouseout="this.style.transform='rotate(-6deg)'"><img src="research.png" style="width:100%;height:100%;object-fit:contain;"/></div>
 
@@ -752,6 +765,17 @@
 
     <div style="position:absolute;left:78%;top:64%;font-size:12px;color:#999;letter-spacing:0.05em;">08.</div>
     <div class="archive-item" onclick="openArchive('moss')" style="position:absolute;left:78%;top:70%;width:135px;height:135px;transform:rotate(7deg);cursor:pointer;transition:transform 0.2s;" onmouseover="this.style.transform='rotate(7deg) scale(1.08)'" onmouseout="this.style.transform='rotate(7deg)'"><img src="illust.png" style="width:100%;height:100%;object-fit:contain;"/></div>
+  </div>
+
+  <div class="archive-mobile" style="display:none;grid-template-columns:repeat(2,1fr);gap:16px;font-family:'Pretendard',sans-serif;">
+    <div onclick="openArchive('folder')" style="position:relative;aspect-ratio:1;cursor:pointer;"><span style="position:absolute;left:4px;top:4px;font-size:11px;color:#999;">01.</span><img src="research.png" style="width:100%;height:100%;object-fit:contain;"/></div>
+    <div onclick="openArchive('illust')" style="position:relative;aspect-ratio:1;cursor:pointer;"><span style="position:absolute;left:4px;top:4px;font-size:11px;color:#999;">02.</span><img src="illust.png" style="width:100%;height:100%;object-fit:contain;"/></div>
+    <div onclick="openArchive('seasons')" style="position:relative;aspect-ratio:1;cursor:pointer;"><span style="position:absolute;left:4px;top:4px;font-size:11px;color:#999;">03.</span><img src="publication.png" style="width:100%;height:100%;object-fit:contain;"/></div>
+    <div onclick="openArchive('gesture')" style="position:relative;aspect-ratio:1;cursor:pointer;"><span style="position:absolute;left:4px;top:4px;font-size:11px;color:#999;">04.</span><img src="video.png" style="width:100%;height:100%;object-fit:contain;"/></div>
+    <div onclick="openArchive('interview')" style="position:relative;aspect-ratio:1;cursor:pointer;"><span style="position:absolute;left:4px;top:4px;font-size:11px;color:#999;">05.</span><img src="video.png" style="width:100%;height:100%;object-fit:contain;"/></div>
+    <div onclick="openArchive('texture')" style="position:relative;aspect-ratio:1;cursor:pointer;"><span style="position:absolute;left:4px;top:4px;font-size:11px;color:#999;">06.</span><img src="research.png" style="width:100%;height:100%;object-fit:contain;"/></div>
+    <div onclick="openArchive('tomvagee')" style="position:relative;aspect-ratio:1;cursor:pointer;"><span style="position:absolute;left:4px;top:4px;font-size:11px;color:#999;">07.</span><img src="publication.png" style="width:100%;height:100%;object-fit:contain;"/></div>
+    <div onclick="openArchive('moss')" style="position:relative;aspect-ratio:1;cursor:pointer;"><span style="position:absolute;left:4px;top:4px;font-size:11px;color:#999;">08.</span><img src="illust.png" style="width:100%;height:100%;object-fit:contain;"/></div>
   </div>
 
 </section>
