@@ -450,10 +450,18 @@
 
     /* ── ABOUT + FOOTER GREEN CURVE WRAP ── */
     .about-footer-curve {
+      position: relative;
       background: #2E7D32;
-      border-radius: 50% 50% 0 0 / 160px 160px 0 0;
-      margin-top: 24px;
-      padding-top: 90px;
+      margin-top: 140px;
+      padding-top: 48px;
+    }
+    .curve-topper {
+      position: absolute;
+      left: 0;
+      bottom: 100%;
+      width: 100%;
+      height: 140px;
+      display: block;
     }
     .about-footer-curve #about { padding-top: 0; padding-bottom: 40px; }
     .about-footer-curve .section-title { color: #fff; }
@@ -638,7 +646,8 @@
       .about-inner { grid-template-columns: 1fr; gap: 32px; }
       footer { padding: 0 20px 24px; flex-direction: column; align-items: flex-start; }
       .footer-copy { text-align: left; }
-      .about-footer-curve { border-radius: 50% 50% 0 0 / 70px 70px 0 0; padding-top: 56px; }
+      .about-footer-curve { margin-top: 70px; }
+      .curve-topper { height: 70px; }
       .hero-illust-desktop { display: none; }
       .hero-illust-mobile { display: flex !important; }
       .archive-desktop { display: none; }
@@ -795,6 +804,9 @@
 
 <!-- ABOUT + FOOTER (green curve wrap) -->
 <div class="about-footer-curve">
+  <svg class="curve-topper" viewBox="0 0 1440 140" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,110 C260,25 500,0 740,18 C980,36 1200,78 1440,55 L1440,140 L0,140 Z" fill="#2E7D32"/>
+  </svg>
 
   <!-- ABOUT -->
   <section id="about">
