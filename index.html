@@ -463,11 +463,36 @@
       height: 140px;
       display: block;
     }
-    .about-footer-curve #about { padding-top: 0; padding-bottom: 120px; }
+    .about-footer-curve #about { padding-top: 0; padding-bottom: 60px; }
     .about-footer-curve .section-title { color: #fff; }
     .about-footer-curve .about-text h2 { color: #fff; }
     .about-footer-curve .about-text p { color: rgba(255,255,255,0.85); }
     .about-footer-curve .doodle-ring { border-color: rgba(255,255,255,0.8); }
+
+    /* ── CAREER (My Work) ── */
+    #career { padding-top: 40px; padding-bottom: 100px; }
+    .career-sub { color: rgba(255,255,255,0.7); font-size: 14px; margin-top: 8px; margin-bottom: 36px; }
+    .career-list { border-top: 1px solid rgba(255,255,255,0.25); max-width: 760px; }
+    .career-item { border-bottom: 1px solid rgba(255,255,255,0.25); }
+    .career-row { display: flex; align-items: center; justify-content: space-between; padding: 22px 0; cursor: pointer; }
+    .career-row-left { display: flex; flex-direction: column; gap: 4px; }
+    .career-name { font-size: 17px; font-weight: 600; color: #fff; }
+    .career-role { font-size: 13px; color: rgba(255,255,255,0.7); }
+    .career-row-right { display: flex; align-items: center; gap: 20px; }
+    .career-date { font-size: 13px; color: rgba(255,255,255,0.7); white-space: nowrap; }
+    .career-plus { font-size: 18px; color: #fff; transition: transform 0.25s ease; }
+    .career-item.open .career-plus { transform: rotate(45deg); }
+    .career-body { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+    .career-item.open .career-body { max-height: 260px; }
+    .career-body ul { padding: 0 0 22px 0; margin: 0; list-style: none; }
+    .career-body li { font-size: 13px; color: rgba(255,255,255,0.8); line-height: 1.9; padding-left: 14px; position: relative; }
+    .career-body li::before { content: "–"; position: absolute; left: 0; color: rgba(255,255,255,0.5); }
+    .career-edu-label { font-size: 12px; letter-spacing: 0.08em; color: rgba(255,255,255,0.6); margin-top: 44px; margin-bottom: 20px; }
+    .career-edu-item { display: flex; align-items: baseline; justify-content: space-between; padding: 14px 0; border-top: 1px solid rgba(255,255,255,0.25); max-width: 760px; }
+    .career-edu-item:last-child { border-bottom: 1px solid rgba(255,255,255,0.25); }
+    .career-edu-name { font-size: 15px; font-weight: 600; color: #fff; }
+    .career-edu-degree { font-size: 13px; color: rgba(255,255,255,0.7); margin-top: 2px; }
+    .career-edu-date { font-size: 13px; color: rgba(255,255,255,0.7); white-space: nowrap; }
 
     /* ── FOOTER ── */
     footer {
@@ -829,6 +854,89 @@
         <p>With a background in branding, content, and design strategy, I approach each project with curiosity, structure, and a love for details.</p>
         <p>I'm always excited to work on meaningful projects and collaborate with great people.</p>
       </div>
+    </div>
+  </section>
+
+  <!-- CAREER (My Work) -->
+  <section id="career">
+    <h2 class="section-title" style="font-family:'Passero One',Georgia,serif;font-weight:400;">My Work</h2>
+    <p class="career-sub">My experiences and projects.</p>
+
+    <div class="career-list">
+      <div class="career-item" onclick="this.classList.toggle('open')">
+        <div class="career-row">
+          <div class="career-row-left">
+            <div class="career-name">Wallog</div>
+            <div class="career-role">Brand & Visual Designer</div>
+          </div>
+          <div class="career-row-right">
+            <span class="career-date">2025 – 2026</span>
+            <span class="career-plus">+</span>
+          </div>
+        </div>
+        <div class="career-body">
+          <ul>
+            <li>Designed overall brand communication strategy</li>
+            <li>Built a visual asset system</li>
+            <li>Collaborated on exhibition and PR planning</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="career-item" onclick="this.classList.toggle('open')">
+        <div class="career-row">
+          <div class="career-row-left">
+            <div class="career-name">Taepyeong Construction</div>
+            <div class="career-role">Administration & Documentation</div>
+          </div>
+          <div class="career-row-right">
+            <span class="career-date">2022 – 2024</span>
+            <span class="career-plus">+</span>
+          </div>
+        </div>
+        <div class="career-body">
+          <ul>
+            <li>Prepared and organized accounting documents</li>
+            <li>Managed specifications and internal company documents</li>
+            <li>Handled construction documentation</li>
+            <li>Coordinated with partner companies</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="career-item" onclick="this.classList.toggle('open')">
+        <div class="career-row">
+          <div class="career-row-left">
+            <div class="career-name">Tricos</div>
+            <div class="career-role">Design Drafting</div>
+          </div>
+          <div class="career-row-right">
+            <span class="career-date">2020 – 2021</span>
+            <span class="career-plus">+</span>
+          </div>
+        </div>
+        <div class="career-body">
+          <ul>
+            <li>Created design drawings for CCTV installation</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="career-edu-label">EDUCATION</div>
+    <div class="career-edu-item">
+      <div>
+        <div class="career-edu-name">Konkuk University</div>
+        <div class="career-edu-degree">Dept. of Living Design</div>
+      </div>
+      <span class="career-edu-date">2015 – 2021</span>
+    </div>
+    <div class="career-edu-item">
+      <div>
+        <div class="career-edu-name">Academic Credit Bank System</div>
+        <div class="career-edu-degree">Psychology</div>
+      </div>
+      <span class="career-edu-date">2023 – 2024</span>
     </div>
   </section>
 
